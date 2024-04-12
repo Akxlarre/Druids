@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/listadoProductos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <title>Título de la página</title>
+</head>
+
+<body>
+    <header>
+        <!-- barra de navegación-->
+        <nav class="navbar navbar-expand-sm">
+            <div>
+                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
+                    <img class="img-fluid profile" src="img/perfil.png" />
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Link 1</a></li>
+                </ul>
+            </div>
+            <div class="container-fluid">
+                <!-- Título centrado -->
+                <div class="mx-auto">
+                    <a class="navbar-brand" href="#">DRUIDS</a>
+                </div>
+                <!-- Botones de perfil y carrito de compra -->
+            </div>
+
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#myModal">
+                <img class="img-fluid profile" src="img/perfil.png" />
+            </button>
+            <button type="button" class="btn">
+                <img class="img-fluid shopping-cart" src="img/carrito-de-compras.png" />
+            </button>
+        </nav>
+        <!-- Modal de inicio de sesión -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Inicio de sesion</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="username" placeholder="Enter your username">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password"
+                                    placeholder="Enter your password">
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary">Sign In</button>
+                                <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                                    data-bs-target="#registerModal">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- The Register Modal -->
+        <div class="modal" id="registerModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Registration</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password"
+                                    placeholder="Enter your password">
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <main>
+        <!-- Contenido principal -->
+        <section>
+            <div class="row d-flex justify-content-center categorias">
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div>
+                        <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
+                            <h1 class="fs-4">Arboles</h1>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Link 1</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div>
+                        <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
+                            <h1 class="fs-4">Arbustos</h1>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Link 1</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div>
+                        <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
+                            <h1 class="fs-4">Cactus</h1>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Link 1</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div>
+                        <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
+                            <h1 class="fs-4">Flores</h1>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Link 1</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div>
+                        <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
+                            <h1 class="fs-4">Implementos</h1>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Link 1</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div>
+                        <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
+                            <h1 class="fs-4">Cuidados</h1>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Link 1</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <div>
+                        <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
+                            <h1 class="fs-4">Enredaderas</h1>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Link 1</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Barra de búsqueda y ordenamiento -->
+        <section>
+            <div class="row d-flex justify-content-end">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 ml-5">
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2 buscar" type="search" placeholder="Buscar producto"
+                            aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                    </form>
+                </div>
+                <div class="col-12 col-sm-4 col-md-4 col-lg-3 mt-3">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-outline-secondary dropdown-toggle"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Ordenar por
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Precio (mayor a menor)</a></li>
+                            <li><a class="dropdown-item" href="#">Precio (menor a mayor)</a></li>
+                            <li><a class="dropdown-item" href="#">Nombre (A-Z)</a></li>
+                            <li><a class="dropdown-item" href="#">Nombre (Z-A)</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Listado de productos -->
+        <section>
+            <div class="row mt-5">
+                <div class="col-12 col-md-3 col-lg-3">
+                    <div class="row">
+                        <div class="col-12">
+                            <button class="boton-filtro fs-4" data-bs-toggle="collapse"
+                                data-bs-target="#demo">Categorias</button>
+                            <img class="flecha-abajo" src="img/flecha-abajo.svg" alt="flecha-abajo"
+                                data-bs-toggle="collapse" data-bs-target="#demo">
+                            <div id="demo" class="collapse mx-3">
+                                <div class="form-check mt-2">
+                                    <input type="checkbox" class="form-check-input" id="check1">
+                                    <label class="form-check-label" for="check1">Opción 1</label>
+                                </div>
+                                <div class="form-check mt-2">
+                                    <input type="checkbox" class="form-check-input" id="check2">
+                                    <label class="form-check-label" for="check2">Opción 2</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="boton-filtro fs-4" data-bs-toggle="collapse"
+                                data-bs-target="#demo2">Precios</button>
+                            <img class="flecha-abajo" src="img/flecha-abajo.svg" alt="flecha-abajo"
+                                data-bs-toggle="collapse" data-bs-target="#demo2">
+                            <div id="demo2" class="collapse mx-3">
+                                <div class="form-check mt-2">
+                                    <input type="checkbox" class="form-check-input" id="check-precios">
+                                    <label class="form-check-label" for="check-precios">Opción 1</label>
+                                </div>
+                                <div class="form-check mt-2">
+                                    <input type="checkbox" class="form-check-input" id="check-precios2">
+                                    <label class="form-check-label" for="check-precios2">Opción 2</label>
+                                </div>
+                            </div>
+                        </div>>
+                    </div>
+                </div>
+                <div class="col-12 col-md-9 col-lg-9">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+                            <div class="conteiner m-1">
+                                <div class="card p-4">
+                                    <img src="img/planta-imagen1.jpeg" class="card-img" alt="arbol1">
+                                    <div class="card-body">
+                                        <h5 class="card-title
+                                        ">Producto 1</h5>
+                                        <button type="button" class="btn btn-primary">Comprar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+                            <div class="conteiner m-1">
+                                <div class="card p-4">
+                                    <img src="img/planta-imagen1.jpeg" class="card-img" alt="arbol1">
+                                    <div class="card-body">
+                                        <h5 class="card-title
+                                        ">Producto 1</h5>
+                                        <button type="button" class="btn btn-primary">Comprar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+                            <div class="conteiner m-1">
+                                <div class="card p-4">
+                                    <img src="img/planta-imagen1.jpeg" class="card-img" alt="arbol1">
+                                    <div class="card-body">
+                                        <h5 class="card-title
+                                        ">Producto 1</h5>
+                                        <button type="button" class="btn btn-primary">Comprar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+                            <div class="conteiner m-1">
+                                <div class="card p-4">
+                                    <img src="img/planta-imagen1.jpeg" class="card-img" alt="arbol1">
+                                    <div class="card-body">
+                                        <h5 class="card-title
+                                        ">Producto 1</h5>
+                                        <button type="button" class="btn btn-primary">Comprar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+                            <div class="conteiner m-1">
+                                <div class="card p-4">
+                                    <img src="img/planta-imagen1.jpeg" class="card-img" alt="arbol1">
+                                    <div class="card-body">
+                                        <h5 class="card-title
+                                        ">Producto 1</h5>
+                                        <button type="button" class="btn btn-primary">Comprar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+                            <div class="conteiner m-1">
+                                <div class="card p-4">
+                                    <img src="img/planta-imagen1.jpeg" class="card-img" alt="arbol1">
+                                    <div class="card-body">
+                                        <h5 class="card-title
+                                        ">Producto 1</h5>
+                                        <button type="button" class="btn btn-primary">Comprar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+                            <div class="conteiner m-1">
+                                <div class="card p-4">
+                                    <img src="img/planta-imagen1.jpeg" class="card-img" alt="arbol1">
+                                    <div class="card-body">
+                                        <h5 class="card-title
+                                        ">Producto 1</h5>
+                                        <button type="button" class="btn btn-primary">Comprar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+                            <div class="conteiner m-1">
+                                <div class="card p-4">
+                                    <img src="img/planta-imagen1.jpeg" class="card-img" alt="arbol1">
+                                    <div class="card-body">
+                                        <h5 class="card-title
+                                        ">Producto 1</h5>
+                                        <button type="button" class="btn btn-primary">Comprar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+                            <div class="conteiner m-1">
+                                <div class="card p-4">
+                                    <img src="img/planta-imagen1.jpeg" class="card-img" alt="arbol1">
+                                    <div class="card-body">
+                                        <h5 class="card-title
+                                        ">Producto 1</h5>
+                                        <button type="button" class="btn btn-primary">Comprar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+                            <div class="conteiner m-1">
+                                <div class="card p-4">
+                                    <img src="img/planta-imagen1.jpeg" class="card-img" alt="arbol1">
+                                    <div class="card-body">
+                                        <h5 class="card-title
+                                        ">Producto 1</h5>
+                                        <button type="button" class="btn btn-primary">Comprar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <<div class="col-12 col-sm-6 col-md-6 col-lg-4">
+                            <div class="conteiner m-1">
+                                <div class="card p-4">
+                                    <img src="img/planta-imagen1.jpeg" class="card-img" alt="arbol1">
+                                    <div class="card-body">
+                                        <h5 class="card-title
+                                        ">Producto 1</h5>
+                                        <button type="button" class="btn btn-primary">Comprar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="mt-5 p-4 justify-content-right">
+        <!-- Contenido del pie de página -->
+        <a class="p-5 text-white" href="#">About Us</a>
+        <a class="p-5 text-white" href="#">Contacto</a>
+    </footer>
+</body>
+</html>
