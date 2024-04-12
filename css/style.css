@@ -1,0 +1,75 @@
+/* Navbar */
+.navbar {
+    background-color: #0A3400; 
+     /* Para que el navbar esté por encima de los demás elementos , lo defino asi para evitar problemas con los modal*/
+}
+.navbar-brand {
+    font-family: 'rowdies', cursive;
+    font-size: 3rem;
+    margin: auto; /* Para centrar el logo */
+    color: #FFFFFF;
+}
+
+.shopping-cart {
+    width: 2rem; /* Para que el icono no se vea tan grande */
+    margin: 0 1rem; /* Para separar el icono del texto */
+}
+
+.profile {
+    width: 2rem;
+}
+
+/* modal */
+.modal{
+    z-index: 15000; /* lo defino mas alto que el navbar para que no se superponga */  
+}
+
+.modal-header {
+    background-color: #0A3400;
+    color: #FFFFFF;
+    display: flex;
+}
+.modal-title {
+    font-family: 'rowdies', cursive;
+    font-size: 2rem;
+    /*centrar el titulo del modal*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/*carousel*/
+.carousel-item img {
+    max-height: 90vh;  /* para que se vea proporcional al espacio de la navbar */
+    width: auto; /* Para mantener la proporción de aspecto */
+  }
+
+.boton-sabermas {
+    background-color: transparent;
+    border: none;
+}
+.boton-sabermas a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+/*cards*/
+.lista-categorias {
+    margin-top: 3rem; /* Para separar las categorías del carousel */
+    
+}
+.card img {
+    display: block; /* Para centrar la imagen */
+    margin: 2rem auto; 
+    max-height: 10rem; /* Para que las imágenes no se vean tan grandes */
+    width: 7rem; /* Para mantener la proporción de aspecto */
+}
+
+/*footer*/
+footer {
+    background-color: #50734D;
+    color: #FFFFFF;
+    text-align: start;
+    width: 100%;
+}
