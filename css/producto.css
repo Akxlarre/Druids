@@ -1,0 +1,76 @@
+/* Navbar */
+.navbar {
+    background-color: #0A3400; 
+     /* Para que el navbar esté por encima de los demás elementos , lo defino asi para evitar problemas con los modal*/
+}
+.navbar-brand {
+    font-family: 'rowdies', cursive;
+    font-size: 3rem;
+    margin: auto; /* Para centrar el logo */
+    color: #FFFFFF;
+}
+
+.shopping-cart {
+    width: 2rem; /* Para que el icono no se vea tan grande */
+    margin: 0 1rem; /* Para separar el icono del texto */
+}
+
+.profile {
+    width: 2rem;
+}
+
+/* modal */
+.modal{
+    z-index: 15000; /* lo defino mas alto que el navbar para que no se superponga */  
+}
+
+.modal-header {
+    background-color: #0A3400;
+    color: #FFFFFF;
+    display: flex;
+}
+.modal-title {
+    font-family: 'rowdies', cursive;
+    font-size: 2rem;
+    /*centrar el titulo del modal*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/*carousel*/
+
+.contenedor-carousel{
+    max-width: 30vw;
+}
+.imagen-carousel{
+    width: 30vw;
+}
+.contenedor-selectores{
+    width: 30vw;
+}
+.selector-imagen{
+    max-width: 4rem;
+}
+@media (max-width: 768px){
+    .contenedor-carousel{
+        max-width: 90vw;
+    }
+    .imagen-carousel{
+        width: 90vw;
+    }
+    .contenedor-selectores{
+        width: 90vw;
+    }
+    .selector-imagen{
+        max-width: 5rem;
+    }
+}
+/*footer*/
+footer {
+    background-color: #50734D;
+    color: #FFFFFF;
+    text-align: start;
+    width: 100%;
+}
