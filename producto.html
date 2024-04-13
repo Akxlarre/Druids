@@ -14,110 +14,110 @@
 
     <title>Título de la página</title>
 </head>
-
-<body>
-    <header>
-        <!-- barra de navegación-->
-        <nav class="navbar navbar-expand-sm">
-            <div>
-                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
-                    <img class="img-fluid profile" src="img/perfil.png" />
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Link 1</a></li>
-                </ul>
-            </div>
-            <div class="container-fluid">
-                <!-- Título centrado -->
-                <div class="mx-auto">
-                    <a class="navbar-brand" href="#">DRUIDS</a>
-                </div>
-                <!-- Botones de perfil y carrito de compra -->
-            </div>
-
-            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#myModal">
+<header>
+    <!-- barra de navegación-->
+    <nav class="navbar navbar-expand-sm">
+        <div>
+            <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
                 <img class="img-fluid profile" src="img/perfil.png" />
             </button>
-            <button type="button" class="btn">
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Perfil</a></li>
+                <li><a class="dropdown-item" href="#">Inventario Admi</a></li>
+                <li><a class="dropdown-item" href="#">Historial de Compras</a></li>
+                <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+            </ul>
+        </div>
+        <div class="container-fluid">
+            <!-- Título centrado -->
+            <div class="mx-auto">
+                <a class="navbar-brand" href="index.html">DRUIDS</a>
+            </div>
+        </div>
+        <!-- Botones de perfil y carrito de compra -->
+        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#myModal">
+            <img class="img-fluid profile" src="img/perfil.png" />
+        </button>
+        <button type="button" class="btn">
+            <a href="carrito.html">
                 <img class="img-fluid shopping-cart" src="img/carrito-de-compras.png" />
-            </button>
-        </nav>
-        <!-- Modal de inicio de sesión -->
-        <div class="modal" id="myModal">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
+            </a>
+        </button>
+    </nav>
+    <!-- Modal de inicio de sesión -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
 
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">Inicio de sesion</h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Inicio de sesion</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
 
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="username" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="username" placeholder="Enter your username">
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password"
-                                    placeholder="Enter your password">
-                            </div>
-                            <div class="d-grid gap-2">
-                                <button type="submit" class="btn btn-primary">Sign In</button>
-                                <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
-                                    data-bs-target="#registerModal">Register</button>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                    </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" placeholder="Enter your username">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Sign In</button>
+                            <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                                data-bs-target="#registerModal">Register</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
-        <!-- The Register Modal -->
-        <div class="modal" id="registerModal">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">Registration</h4>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter your name">
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter your email">
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password"
-                                    placeholder="Enter your password">
-                            </div>
-                            <div class="d-grid gap-2">
-                                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Register</button>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                    </div>
+    </div>
+    <!-- The Register Modal -->
+    <div class="modal" id="registerModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Registration</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Register</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
-
-    </header>
+    </div>
+</header>
+<body>
     <main>
         <section>
             <div class="row row-cols-2">
