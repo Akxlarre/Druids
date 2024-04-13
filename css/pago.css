@@ -38,6 +38,9 @@
     align-items: center;
 
 }
+.contenedor-tarjeta{
+    border: transparent;
+}
 /*footer*/
 footer {
     background-color: #50734D;
