@@ -11,7 +11,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
 
-        <title>Título de la página</title>
+        <title>Lista de productos</title>
     </head>
     <header>
         <!-- barra de navegación-->
@@ -59,11 +59,11 @@
                         <form>
                             <div class="mb-3">
                                 <label for="username" class="form-label fs-4">Nombre de usuario</label>
-                                <input type="text" class="form-control fs-5" id="username" placeholder="Enter your username">
+                                <input type="text" class="form-control fs-5" id="username" placeholder="Ingresa tu nombre de usuario">
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label fs-4">Contraseña</label>
-                                <input type="password" class="form-control fs-5" id="password" placeholder="Enter your password">
+                                <input type="password" class="form-control fs-5" id="password" placeholder="Ingresa tu contraseña">
                             </div>
                             <div class="d-grid gap-2">
                                 <button type="submit" class="btn btn-primary fs-4">Iniciar sesion</button>
@@ -74,7 +74,7 @@
                     </div>
                     <!-- Modal footer -->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger fs-5" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-danger fs-5" data-bs-dismiss="modal">Cerrar</button>
                     </div>
                 </div>
             </div>
@@ -92,16 +92,16 @@
                     <div class="modal-body">
                         <form>
                             <div class="mb-3">
-                                <label for="name" class="form-label fs-4">Nomnre</label>
-                                <input type="text" class="form-control fs-5" id="name" placeholder="Enter your name">
+                                <label for="name" class="form-label fs-4">Nombre de usuario</label>
+                                <input type="text" class="form-control fs-5" id="name" placeholder="Ingresa tu nombre de usuario">
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label fs-4">Email</label>
-                                <input type="email" class="form-control fs-5" id="email" placeholder="Enter your email">
+                                <input type="email" class="form-control fs-5" id="email" placeholder="Ingresa tu email">
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label fs-4">Contraseña</label>
-                                <input type="password" class="form-control fs-5" id="password" placeholder="Enter your password">
+                                <input type="password" class="form-control fs-5" id="password" placeholder="Ingresa tu contraseña">
                             </div>
                             <div class="d-grid gap-2">
                                 <button type="submit" class="btn btn-primary fs-4" data-bs-dismiss="modal">Registrarse</button>
@@ -110,7 +110,7 @@
                     </div>
                     <!-- Modal footer -->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger fs-5" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-danger fs-5" data-bs-dismiss="modal">Cerrar</button>
                     </div>
                 </div>
             </div>
@@ -186,22 +186,22 @@
                 <div class="row d-flex justify-content-end mt-5">
                     <div class="col-12 col-sm-6 col-md-6 col-lg-6 ml-5">
                         <form class="form-inline">
-                            <input class="form-control mr-sm-2 buscar" type="search" placeholder="Buscar producto"
+                            <input class="form-control mr-sm-2 buscar fs-5" type="search" placeholder="Buscar producto"
                                 aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                            <button class="btn btn-outline-success my-2 my-sm-0 fs-5" type="submit">Buscar</button>
                         </form>
                     </div>
                     <div class="col-12 col-sm-4 col-md-4 col-lg-3">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-outline-secondary dropdown-toggle"
+                            <button type="button" class="btn btn-outline-secondary dropdown-toggle fs-5"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Ordenar por
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Precio (mayor a menor)</a></li>
-                                <li><a class="dropdown-item" href="#">Precio (menor a mayor)</a></li>
-                                <li><a class="dropdown-item" href="#">Nombre (A-Z)</a></li>
-                                <li><a class="dropdown-item" href="#">Nombre (Z-A)</a></li>
+                                <li><a class="dropdown-item fs-5" href="#">Precio (mayor a menor)</a></li>
+                                <li><a class="dropdown-item fs-5" href="#">Precio (menor a mayor)</a></li>
+                                <li><a class="dropdown-item fs-5" href="#">Nombre (A-Z)</a></li>
+                                <li><a class="dropdown-item fs-5" href="#">Nombre (Z-A)</a></li>
                             </ul>
                         </div>
                     </div>
@@ -214,18 +214,18 @@
                         <div class="contenedor-filtro ">
                             <div class="row">
                                 <div class="col-12 header-filtro">
-                                    <h3 class="text-center">Filtros</h3>
+                                    <h3 class="text-center fs-4">Filtros</h3>
                                 </div>
                                 <div class="col-12 contenedor-dropdown mt-1">
                                     <button class="boton-filtro fs-4" data-bs-toggle="collapse"
                                         data-bs-target="#demo">Categorias</button>
                                     <div id="demo" class="collapse mx-3 mb-4">
                                         <div class="form-check mt-2">
-                                            <input type="checkbox" class="form-check-input" id="check1">
+                                            <input type="checkbox" class="form-check-input fs-5" id="check1">
                                             <label class="form-check-label" for="check1">Opción 1</label>
                                         </div>
                                         <div class="form-check mt-2">
-                                            <input type="checkbox" class="form-check-input" id="check2">
+                                            <input type="checkbox" class="form-check-input fs-5" id="check2">
                                             <label class="form-check-label" for="check2">Opción 2</label>
                                         </div>
                                     </div>
@@ -235,11 +235,11 @@
                                         data-bs-target="#demo2">Precios</button>
                                     <div id="demo2" class="collapse mx-3 mb-4">
                                         <div class="form-check mt-2">
-                                            <input type="checkbox" class="form-check-input" id="check-precios">
+                                            <input type="checkbox" class="form-check-input fs-5" id="check-precios">
                                             <label class="form-check-label" for="check-precios">Opción 1</label>
                                         </div>
                                         <div class="form-check mt-2">
-                                            <input type="checkbox" class="form-check-input" id="check-precios2">
+                                            <input type="checkbox" class="form-check-input fs-5" id="check-precios2">
                                             <label class="form-check-label" for="check-precios2">Opción 2</label>
                                         </div>
                                     </div>
@@ -255,18 +255,18 @@
                                     <div class="card mb-3">
                                         <img src="img/planta-imagen1.jpeg" class="card-img-top" alt="Pet Food">
                                         <div class="card-body">
-                                            <h5 class="card-title">Nombre Planta</h5>
-                                            <p class="card-text">Breve descripcion</p>
+                                            <h5 class="card-title fs-3">Nombre Planta</h5>
+                                            <p class="card-text fs-5">Breve descripcion</p>
                                             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">Pertenece a</li>
-                                                <li class="list-group-item">categoria</li>
+                                                <li class="list-group-item fs-6">Pertenece a</li>
+                                                <li class="list-group-item fs-6">categoria</li>
                                             </ul>
                                             <div class="row">
                                                 <div class="col-md-12 col-lg-12 mb-3">
-                                                    <p class="card-text">Precio: $4000</p>
+                                                    <p class="card-text fs-4">Precio: $4000</p>
                                                 </div>
                                                 <div class="col-md-12 col-lg-12 text-right">
-                                                    <a href="producto.html" class="btn btn-primary">Comprar</a>
+                                                    <a href="producto.html" class="btn btn-primary fs-5">Comprar</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -276,18 +276,18 @@
                                     <div class="card mb-3">
                                         <img src="img/planta-imagen1.jpeg" class="card-img-top" alt="Pet Food">
                                         <div class="card-body">
-                                            <h5 class="card-title">Nombre Planta</h5>
-                                            <p class="card-text">Breve descripcion</p>
+                                            <h5 class="card-title fs-3">Nombre Planta</h5>
+                                            <p class="card-text fs-5">Breve descripcion</p>
                                             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">Pertenece a</li>
-                                                <li class="list-group-item">categoria</li>
+                                                <li class="list-group-item fs-6">Pertenece a</li>
+                                                <li class="list-group-item fs-6">categoria</li>
                                             </ul>
                                             <div class="row">
                                                 <div class="col-md-12 col-lg-12 mb-3">
-                                                    <p class="card-text">Precio: $4000</p>
+                                                    <p class="card-text fs-4">Precio: $4000</p>
                                                 </div>
                                                 <div class="col-md-12 col-lg-12 text-right">
-                                                    <a href="producto.html" class="btn btn-primary">Comprar</a>
+                                                    <a href="producto.html" class="btn btn-primary fs-5">Comprar</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -297,18 +297,18 @@
                                     <div class="card mb-3">
                                         <img src="img/planta-imagen1.jpeg" class="card-img-top" alt="Pet Food">
                                         <div class="card-body">
-                                            <h5 class="card-title">Nombre Planta</h5>
-                                            <p class="card-text">Breve descripcion</p>
+                                            <h5 class="card-title fs-3">Nombre Planta</h5>
+                                            <p class="card-text fs-5">Breve descripcion</p>
                                             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">Pertenece a</li>
-                                                <li class="list-group-item">categoria</li>
+                                                <li class="list-group-item fs-6">Pertenece a</li>
+                                                <li class="list-group-item fs-6">categoria</li>
                                             </ul>
                                             <div class="row">
                                                 <div class="col-md-12 col-lg-12 mb-3">
-                                                    <p class="card-text">Precio: $4000</p>
+                                                    <p class="card-text fs-4">Precio: $4000</p>
                                                 </div>
                                                 <div class="col-md-12 col-lg-12 text-right">
-                                                    <a href="producto.html" class="btn btn-primary">Comprar</a>
+                                                    <a href="producto.html" class="btn btn-primary fs-5">Comprar</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -318,18 +318,18 @@
                                     <div class="card mb-3">
                                         <img src="img/planta-imagen1.jpeg" class="card-img-top" alt="Pet Food">
                                         <div class="card-body">
-                                            <h5 class="card-title">Nombre Planta</h5>
-                                            <p class="card-text">Breve descripcion</p>
+                                            <h5 class="card-title fs-3">Nombre Planta</h5>
+                                            <p class="card-text fs-5">Breve descripcion</p>
                                             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">Pertenece a</li>
-                                                <li class="list-group-item">categoria</li>
+                                                <li class="list-group-item fs-6">Pertenece a</li>
+                                                <li class="list-group-item fs-6">categoria</li>
                                             </ul>
                                             <div class="row">
                                                 <div class="col-md-12 col-lg-12 mb-3">
-                                                    <p class="card-text">Precio: $4000</p>
+                                                    <p class="card-text fs-4">Precio: $4000</p>
                                                 </div>
                                                 <div class="col-md-12 col-lg-12 text-right">
-                                                    <a href="producto.html" class="btn btn-primary">Comprar</a>
+                                                    <a href="producto.html" class="btn btn-primary fs-5">Comprar</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -339,18 +339,18 @@
                                     <div class="card mb-3">
                                         <img src="img/planta-imagen1.jpeg" class="card-img-top" alt="Pet Food">
                                         <div class="card-body">
-                                            <h5 class="card-title">Nombre Planta</h5>
-                                            <p class="card-text">Breve descripcion</p>
+                                            <h5 class="card-title fs-3">Nombre Planta</h5>
+                                            <p class="card-text fs-5">Breve descripcion</p>
                                             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">Pertenece a</li>
-                                                <li class="list-group-item">categoria</li>
+                                                <li class="list-group-item fs-6">Pertenece a</li>
+                                                <li class="list-group-item fs-6">categoria</li>
                                             </ul>
                                             <div class="row">
-                                                <div class="col-md-12 col-lg-12">
-                                                    <p class="card-text">Precio: $4000</p>
+                                                <div class="col-md-12 col-lg-12 mb-3">
+                                                    <p class="card-text fs-4">Precio: $4000</p>
                                                 </div>
                                                 <div class="col-md-12 col-lg-12 text-right">
-                                                    <a href="producto.html" class="btn btn-primary">Comprar</a>
+                                                    <a href="producto.html" class="btn btn-primary fs-5">Comprar</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -360,18 +360,18 @@
                                     <div class="card mb-3">
                                         <img src="img/planta-imagen1.jpeg" class="card-img-top" alt="Pet Food">
                                         <div class="card-body">
-                                            <h5 class="card-title">Nombre Planta</h5>
-                                            <p class="card-text">Breve descripcion</p>
+                                            <h5 class="card-title fs-3">Nombre Planta</h5>
+                                            <p class="card-text fs-5">Breve descripcion</p>
                                             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">Pertenece a</li>
-                                                <li class="list-group-item">categoria</li>
+                                                <li class="list-group-item fs-6">Pertenece a</li>
+                                                <li class="list-group-item fs-6">categoria</li>
                                             </ul>
                                             <div class="row">
-                                                <div class="col-md-12 col-lg-12">
-                                                    <p class="card-text">Precio: $4000</p>
+                                                <div class="col-md-12 col-lg-12 mb-3">
+                                                    <p class="card-text fs-4">Precio: $4000</p>
                                                 </div>
                                                 <div class="col-md-12 col-lg-12 text-right">
-                                                    <a href="producto.html" class="btn btn-primary">Comprar</a>
+                                                    <a href="producto.html" class="btn btn-primary fs-5">Comprar</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -381,18 +381,18 @@
                                     <div class="card mb-3">
                                         <img src="img/planta-imagen1.jpeg" class="card-img-top" alt="Pet Food">
                                         <div class="card-body">
-                                            <h5 class="card-title">Nombre Planta</h5>
-                                            <p class="card-text">Breve descripcion</p>
+                                            <h5 class="card-title fs-3">Nombre Planta</h5>
+                                            <p class="card-text fs-5">Breve descripcion</p>
                                             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">Pertenece a</li>
-                                                <li class="list-group-item">categoria</li>
+                                                <li class="list-group-item fs-6">Pertenece a</li>
+                                                <li class="list-group-item fs-6">categoria</li>
                                             </ul>
                                             <div class="row">
-                                                <div class="col-md-12 col-lg-12">
-                                                    <p class="card-text">Precio: $4000</p>
+                                                <div class="col-md-12 col-lg-12 mb-3">
+                                                    <p class="card-text fs-4">Precio: $4000</p>
                                                 </div>
                                                 <div class="col-md-12 col-lg-12 text-right">
-                                                    <a href="producto.html" class="btn btn-primary">Comprar</a>
+                                                    <a href="producto.html" class="btn btn-primary fs-5">Comprar</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -402,18 +402,18 @@
                                     <div class="card mb-3">
                                         <img src="img/planta-imagen1.jpeg" class="card-img-top" alt="Pet Food">
                                         <div class="card-body">
-                                            <h5 class="card-title">Nombre Planta</h5>
-                                            <p class="card-text">Breve descripcion</p>
+                                            <h5 class="card-title fs-3">Nombre Planta</h5>
+                                            <p class="card-text fs-5">Breve descripcion</p>
                                             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">Pertenece a</li>
-                                                <li class="list-group-item">categoria</li>
+                                                <li class="list-group-item fs-6">Pertenece a</li>
+                                                <li class="list-group-item fs-6">categoria</li>
                                             </ul>
                                             <div class="row">
-                                                <div class="col-md-12 col-lg-12">
-                                                    <p class="card-text">Precio: $4000</p>
+                                                <div class="col-md-12 col-lg-12 mb-3">
+                                                    <p class="card-text fs-4">Precio: $4000</p>
                                                 </div>
                                                 <div class="col-md-12 col-lg-12 text-right">
-                                                    <a href="producto.html" class="btn btn-primary">Comprar</a>
+                                                    <a href="producto.html" class="btn btn-primary fs-5">Comprar</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -423,18 +423,18 @@
                                     <div class="card mb-3">
                                         <img src="img/planta-imagen1.jpeg" class="card-img-top" alt="Pet Food">
                                         <div class="card-body">
-                                            <h5 class="card-title">Nombre Planta</h5>
-                                            <p class="card-text">Breve descripcion</p>
+                                            <h5 class="card-title fs-3">Nombre Planta</h5>
+                                            <p class="card-text fs-5">Breve descripcion</p>
                                             <ul class="list-group list-group-flush">
-                                                <li class="list-group-item">Pertenece a</li>
-                                                <li class="list-group-item">categoria</li>
+                                                <li class="list-group-item fs-6">Pertenece a</li>
+                                                <li class="list-group-item fs-6">categoria</li>
                                             </ul>
                                             <div class="row">
-                                                <div class="col-md-12 col-lg-12">
-                                                    <p class="card-text">Precio: $4000</p>
+                                                <div class="col-md-12 col-lg-12 mb-3">
+                                                    <p class="card-text fs-4">Precio: $4000</p>
                                                 </div>
                                                 <div class="col-md-12 col-lg-12 text-right">
-                                                    <a href="producto.html" class="btn btn-primary">Comprar</a>
+                                                    <a href="producto.html" class="btn btn-primary fs-5">Comprar</a>
                                                 </div>
                                             </div>
                                         </div>
