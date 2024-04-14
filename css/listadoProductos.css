@@ -87,9 +87,13 @@
 
 .boton-filtro{
     width: 100%;
+    padding: 0rem;
+    margin: 0rem;
+    background-color: #50734D;
+    color: #FFFFFF;
 }
 .contenedor-dropdown{
-    padding: 0,5rem;
+    padding: 0rem;
     border: #000000 solid 1px;
 }
 /*Productos*/
