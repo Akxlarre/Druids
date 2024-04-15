@@ -67,6 +67,10 @@
         max-width: 5rem;
     }
 }
+.boton-volver img{
+    width: 2rem;
+    height: 2rem;
+}
 /*descripcion*/
 .Descripcion{
     border-top: gray 1px solid;
