@@ -39,6 +39,19 @@
 
 }
 
+.contenedor-pagoexitoso{
+    height: 45rem;
+}
+.card {
+    background-color: #FFFFFF;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
+    margin: 1rem;
+    padding: 1rem;
+    width: 90%;
+    height: 38rem;
+}
+
 /*footer*/
 footer {
     background-color: #2B2B2B;
