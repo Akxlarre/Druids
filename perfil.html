@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
 
-    <title>Inicio</title>
+    <title>Perfil</title>
 </head>
 <header>
     <!-- barra de navegación-->
@@ -36,7 +36,7 @@
         </div>
         <!-- Botones de perfil y carrito de compra -->
         <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#myModal">
-            <img class="img-fluid profile" src="img/perfil.png" />
+            <img class="img-fluid profile" src="img/perfil.png"/>
         </button>
         <button type="button" class="btn">
             <a href="carrito.html">
@@ -125,26 +125,31 @@
 
 <body>
     <main>
+        <!--boton de volver atras-->
+        <section class="d-flex justify-content-start">
+            <div class="container m-2">
+                <a href="index.html" class="btn boton-volver"><img src="img/back-svgrepo-com.svg" alt=""></a>
+            </div>
+        </section>
         <section>
             <div class="row">
-                <div class="col-6">
-                    <div class="card mb-3">
-                        <img src="https://placehold.co/300x200/007bff/ffffff?text=Card+Image" class="card-img-top img-fluid rounded-start" alt="Card Image">
-                        <div class="card-body">
-                          <h5 class="card-title">Card Title</h5>
-                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper diam quis mattis semper. Nunc nec dui eget quam ultricies mattis. Nullam ac felis semper, lobortis quam sit amet, ullamcorper quam. Maecenas sit amet mollis eros. Sed ultrices dui eget magna tincidunt, ac tincidunt magna faucibus.</p>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="card m-3">
+                        <img src="img/avatar.svg" class="card-img-top img-fluid rounded-start imagen-perfil" alt="Card Image">
+                        <div class="card-body d-flex justify-content-center">
+                          <h5 class="card-title">Nombre usuario</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                     <div class="card m-3">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">Full Name</h6>
+                                    <h6 class="mb-0">Nombre</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    Kenneth Valdez
+                                    Pepito
                                 </div>
                             </div>
                             <hr>
@@ -159,42 +164,150 @@
                             <hr>
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">Phone</h6>
+                                    <h6 class="mb-0">Direccion</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    (239) 816-9029
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <h6 class="mb-0">Mobile</h6>
-                                </div>
-                                <div class="col-sm-9 text-secondary">
-                                    (320) 380-4539
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <h6 class="mb-0">Address</h6>
-                                </div>
-                                <div class="col-sm-9 text-secondary">
-                                    Bay Area, San Francisco, CA
+                                    Concepcion, San andres 123
                                 </div>
                             </div>
                             <hr>
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <a class="btn btn-info " target="__blank"
-                                        href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalEditar">Editar perfil</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>          
+        </section>
+        <!-- modal de editar datos -->
+        <div class="modal" id="ModalEditar">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title fs-1">Editar perfil</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="row mb-3">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Nombre</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                <input type="text" class="form-control" value="Pepito">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Email</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                <input type="text" class="form-control" value="fip@jukmuh.al">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Direccion</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                <input type="text" class="form-control" value="Concepcion, San andres 123">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 d-flex justify-content-end">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger fs-5" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section>
+            <div class="card m-3">
+                <div class="card-header d-flex justify-content-center">
+                    <h5>Historial de compras</h5>
+                </div>
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                          <div class="col-sm-12 col-md-6 col-lg-4">
+                            <div class="card">
+                              <div class="card-body">
+                                <h5 class="card-title">ID del Pedido: #1234</h5>
+                                <p class="card-text">Productos Comprados:<br> - Producto 1<br> - Producto 2<br> - Producto 3</p>
+                                <p class="card-text">Total: $100.00</p>
+                                <p class="card-text">Estado de la Venta: En Proceso</p>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="col-sm-12 col-md-6 col-lg-4">
+                            <div class="card">
+                              <div class="card-body">
+                                <h5 class="card-title">ID del Pedido: #1235</h5>
+                                <p class="card-text">Productos Comprados:<br> - Producto 4<br> - Producto 5<br> - Producto 6</p>
+                                <p class="card-text">Total: $150.00</p>
+                                <p class="card-text">Estado de la Venta: Entregado</p>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div class="col-sm-12 col-md-6 col-lg-4">
+                            <div class="card">
+                              <div class="card-body">
+                                <h5 class="card-title">ID del Pedido: #1236</h5>
+                                <p class="card-text">Productos Comprados:<br> - Producto 7<br> - Producto 8<br> - Producto 9</p>
+                                <p class="card-text">Total: $200.00</p>
+                                <p class="card-text">Estado de la Venta: Cancelado</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                              <div class="card">
+                                <div class="card-body">
+                                  <h5 class="card-title">ID del Pedido: #1234</h5>
+                                  <p class="card-text">Productos Comprados:<br> - Producto 1<br> - Producto 2<br> - Producto 3</p>
+                                  <p class="card-text">Total: $100.00</p>
+                                  <p class="card-text">Estado de la Venta: En Proceso</p>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                              <div class="card">
+                                <div class="card-body">
+                                  <h5 class="card-title">ID del Pedido: #1235</h5>
+                                  <p class="card-text">Productos Comprados:<br> - Producto 4<br> - Producto 5<br> - Producto 6</p>
+                                  <p class="card-text">Total: $150.00</p>
+                                  <p class="card-text">Estado de la Venta: Entregado</p>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div class="col-sm-12 col-md-6 col-lg-4">
+                              <div class="card">
+                                <div class="card-body">
+                                  <h5 class="card-title">ID del Pedido: #1236</h5>
+                                  <p class="card-text">Productos Comprados:<br> - Producto 7<br> - Producto 8<br> - Producto 9</p>
+                                  <p class="card-text">Total: $200.00</p>
+                                  <p class="card-text">Estado de la Venta: Cancelado</p>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </section>    
     </main>
 </body>
 <footer class="mt-3 p-5 justify-content-right">
