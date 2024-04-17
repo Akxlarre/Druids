@@ -1,0 +1,81 @@
+/* Navbar */
+.navbar {
+    background-color: #0A3400; 
+     /* Para que el navbar esté por encima de los demás elementos , lo defino asi para evitar problemas con los modal*/
+}
+.navbar-brand {
+    font-family: 'rowdies', cursive;
+    font-size: 3rem;
+    margin: auto; /* Para centrar el logo */
+    color: #FFFFFF;
+}
+
+.shopping-cart {
+    width: 2rem; /* Para que el icono no se vea tan grande */
+    margin: 0 1rem; /* Para separar el icono del texto */
+}
+
+.profile {
+    width: 2rem;
+}
+
+/* modal */
+.modal{
+    z-index: 15000; /* lo defino mas alto que el navbar para que no se superponga */  
+}
+
+.modal-header {
+    background-color: #0A3400;
+    color: #FFFFFF;
+    display: flex;
+}
+.modal-title {
+    font-family: 'rowdies', cursive;
+    font-size: 2rem;
+    /*centrar el titulo del modal*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton-volver img{
+    width: 2rem;
+    height: 2rem;
+}
+/* Estilos para el contenedor principal */
+.container {
+    padding-top: 20px;
+}
+
+/* Estilos para los elementos de lista de pedidos */
+.list-group-item {
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.list-group-item:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los botones */
+.btn {
+    margin-right: 5px;
+}
+
+/* Estilos para el modal */
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+
+/*footer*/
+footer {
+    background-color: #2B2B2B;
+    color: #FFFFFF;
+    text-align: start;
+    width: 100%;
+}
