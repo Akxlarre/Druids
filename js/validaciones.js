@@ -20,8 +20,42 @@ $(document).ready(function () {
     });
 });
 
+// requerimientos de la contraseña
+$(document).ready(function() {
+    $('#password-registro').on('input blur', function() {
+        var password = $(this).val();
+        var longitudRegex = /^.{8,}$/;
+        var mayusculaRegex = /[A-Z]/;
+        var minusculaRegex = /[a-z]/;
+        var numeroRegex = /\d/;
+        var especialRegex = /[^\da-zA-Z]/;
+
+        // Función para verificar si un requisito está cumplido y cambiar la clase de color
+        function verificarRequisito(regex, elemento) {
+            if (regex.test(password)) {
+                elemento.removeClass('text-danger').addClass('text-success');
+                elemento.find('.validador').attr('src', 'img/complete-svgrepo-com.svg');
+                } else {
+                elemento.removeClass('text-success').addClass('text-danger');
+                elemento.find('.validador').attr('src', 'img/empty-svgrepo-com.svg');
+            }
+        }
+
+        // Verificar cada requisito y cambiar clase de color según corresponda
+        verificarRequisito(longitudRegex, $('#requerimiento-longitud'));
+        verificarRequisito(mayusculaRegex, $('#requerimiento-mayuscula'));
+        verificarRequisito(minusculaRegex, $('#requerimiento-minuscula'));
+        verificarRequisito(numeroRegex, $('#requerimiento-numero'));
+        verificarRequisito(especialRegex, $('#requerimiento-especial'));
+    });
+});
+
 // validar formulario registro
 $(document).ready(function () {
+
+    $.validator.addMethod("noEspacios", function(value, element) {
+        return this.optional(element) || !/\s/.test(value);
+    }, "El nombre de usuario no puede contener espacios");
 
     $.validator.addMethod("strongPassword", function (value, element) {
         // Expresiones regulares para validar los criterios de la contraseña
@@ -49,6 +83,8 @@ $(document).ready(function () {
         rules: {
             "usuario-registro": {
                 required: true,
+                minlength: 3,
+                noEspacios: true,
             },
             "email-registro": {
                 required: true,
@@ -66,7 +102,8 @@ $(document).ready(function () {
         },
         messages: {
             "usuario-registro": {
-                required: "Por favor ingresa un nombre de usuario"
+                required: "Por favor ingresa un nombre de usuario",
+                minlength: "El nombre de usuario debe tener al menos 3 caracteres"
             },
             "email-registro": {
                 required: "Por favor ingresa tu correo electrónico",
