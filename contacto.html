@@ -151,18 +151,18 @@
                         </address>
                     </div>
                     <div class="col-md-6">
-                        <form>
+                        <form class="needs-validation" id="formulario-contacto">
                             <div class="mb-3">
-                                <label for="name" class="form-label fs-5">Nombre:</label>
-                                <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre">
+                                <label for="nombre-contacto" class="form-label fs-5">Nombre:</label>
+                                <input type="text" class="form-control" id="nombre-contacto" name="nombre-contacto" placeholder="Ingresa tu nombre">
                             </div>
                             <div class="mb-3">
-                                <label for="email" class="form-label fs-5">Email:</label>
-                                <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo">
+                                <label for="email-contacto" class="form-label fs-5">Email:</label>
+                                <input type="email" class="form-control" id="email-contacto" name="email-contacto" placeholder="Ingresa tu correo">
                             </div>
                             <div class="mb-3">
-                                <label for="message" class="form-label fs-5">Mensaje:</label>
-                                <textarea class="form-control" id="message" rows="3"></textarea>
+                                <label for="mensaje-contacto" class="form-label fs-5">Mensaje:</label>
+                                <textarea class="form-control" id="mensaje-contacto" name="mensaje-contacto" rows="3"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Enviar mensaje</button>
                         </form>
@@ -177,5 +177,11 @@
     <a class="p-5 text-white fs-4" href="sobreNosotros.html">Sobre Nosotros</a>
     <a class="p-5 text-white fs-4" href="contacto.html">Contacto</a>
 </footer>
-
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!--jQuery validate-->
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<!-- Script -->
+<script src="js/scripts.js"></script>
+<script src="js/validaciones.js"></script>   
 </html>

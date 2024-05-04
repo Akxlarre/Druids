@@ -136,7 +136,7 @@ $(document).ready(function () {
             "nombre-contacto": {
                 required: true,
                 minlength: 3,
-                sinEspacios: true,
+                noEspacios: true,
             },
             "email-contacto": {
                 required: true,
