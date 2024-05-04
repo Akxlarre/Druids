@@ -39,6 +39,11 @@
 
 }
 
+.requerimiento {
+    font-size: 0,2rem;
+    font-weight: bold;
+    margin-left: 0,7rem;
+}
 /*carousel*/
 .carousel-item img {
     max-height: 90vh;  /* para que se vea proporcional al espacio de la navbar */
