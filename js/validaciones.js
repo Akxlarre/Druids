@@ -18,6 +18,11 @@ $(document).ready(function () {
             }
         }
     });
+    $("#formulario-inicio-sesion").submit(function () {
+        if ($("#formulario-inicio-sesion").valid()) {
+            $("#boton-inicio-sesion").hide();
+        }
+    });
 });
 
 // requerimientos de la contraseña
@@ -50,34 +55,35 @@ $(document).ready(function() {
     });
 });
 
+//nuevos metodos de validacion
+$.validator.addMethod("noEspacios", function(value, element) {
+    return this.optional(element) || !/\s/.test(value);
+}, "El nombre de usuario no puede contener espacios");
+
+$.validator.addMethod("strongPassword", function (value, element) {
+    // Expresiones regulares para validar los criterios de la contraseña
+    var longitudRegex = /^.{8,}$/; // Al menos 8 caracteres de longitud
+    var mayusculaRegex = /[A-Z]/; // Al menos una letra mayúscula
+    var minusculaRegex = /[a-z]/; // Al menos una letra minúscula
+    var numeroRegex = /\d/; // Al menos un número
+    var especialRegex = /[^a-zA-Z\d]/; // Al menos un carácter especial
+
+    // Verificar si el valor del campo de contraseña cumple con todos los criterios
+    return this.optional(element) ||
+        longitudRegex.test(value) &&
+        mayusculaRegex.test(value) &&
+        minusculaRegex.test(value) &&
+        numeroRegex.test(value) &&
+        especialRegex.test(value);
+}, "La contraseña debe cumplir con los requerimientos");
+
+$.validator.addMethod("emailConDominio", function (value, element) {
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return this.optional(element) || emailRegex.test(value);
+}, "Por favor ingresa un correo electrónico válido");
+
 // validar formulario registro
 $(document).ready(function () {
-
-    $.validator.addMethod("noEspacios", function(value, element) {
-        return this.optional(element) || !/\s/.test(value);
-    }, "El nombre de usuario no puede contener espacios");
-
-    $.validator.addMethod("strongPassword", function (value, element) {
-        // Expresiones regulares para validar los criterios de la contraseña
-        var longitudRegex = /^.{8,}$/; // Al menos 8 caracteres de longitud
-        var mayusculaRegex = /[A-Z]/; // Al menos una letra mayúscula
-        var minusculaRegex = /[a-z]/; // Al menos una letra minúscula
-        var numeroRegex = /\d/; // Al menos un número
-        var especialRegex = /[^a-zA-Z\d]/; // Al menos un carácter especial
-
-        // Verificar si el valor del campo de contraseña cumple con todos los criterios
-        return this.optional(element) ||
-            longitudRegex.test(value) &&
-            mayusculaRegex.test(value) &&
-            minusculaRegex.test(value) &&
-            numeroRegex.test(value) &&
-            especialRegex.test(value);
-    }, "La contraseña debe cumplir con los requerimientos");
-
-    $.validator.addMethod("emailConDominio", function (value, element) {
-        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return this.optional(element) || emailRegex.test(value);
-    }, "Por favor ingresa un correo electrónico válido");
 
     $("#formulario-registro").validate({
         rules: {
@@ -119,4 +125,43 @@ $(document).ready(function () {
             }
         }
     });
+
 });
+
+// validar formulario contacto
+
+$(document).ready(function () {
+    $("#formulario-contacto").validate({
+        rules: {
+            "nombre-contacto": {
+                required: true,
+                minlength: 3,
+                sinEspacios: true,
+            },
+            "email-contacto": {
+                required: true,
+                email: true,
+                emailConDominio: true,
+            },
+            "mensaje-contacto": {
+                required: true,
+                minlength: 150,
+            }
+        },
+        messages: {
+            "nombre-contacto": {
+                required: "Por favor ingresa tu nombre",
+                minlength: "El nombre debe tener al menos 3 caracteres"
+            },
+            "email-contacto": {
+                required: "Por favor ingresa tu correo electrónico",
+                email: "Por favor ingresa un correo electrónico válido"
+            },
+            "mensaje-contacto": {
+                required: "Por favor ingresa un mensaje",
+                minlength: "El mensaje debe tener al menos 150 caracteres"
+            }
+        }
+    });
+});
+
