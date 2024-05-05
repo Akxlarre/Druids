@@ -165,3 +165,94 @@ $(document).ready(function () {
     });
 });
 
+//validar formulario Pago
+$(document).ready(function () {
+    $("#formulario-pago").validate({
+        rules: {
+            "nombre-pago": {
+                required: true,
+                minlength: 3,
+                noEspacios: true,
+            },
+            "apellido-pago": {
+                required: true,
+                minlength: 3,
+                noEspacios: true,
+            },
+            "email-pago": {
+                required: true,
+                email: true,
+                emailConDominio: true,
+            },
+            "direccion-pago": {
+                required: true,
+                minlength: 10,
+            },
+            "numero-Tarjeta": {
+                required: true,
+                creditcard: true,
+            },
+            "fecha-Vencimiento": {
+                required: true,
+            },
+            "cvv": {
+                required: true,
+                minlength: 3,
+            },
+            "nombre-titular": {
+                required: true,
+                minlength: 3,
+                noEspacios: true,
+            },
+            "rut-titular": {
+                required: true,
+            },
+        },
+        messages: {
+            "nombre-pago": {
+                required: "Por favor ingresa tu nombre",
+                minlength: "El nombre debe tener al menos 3 caracteres"
+            },
+            "apellido-pago": {
+                required: "Por favor ingresa tu apellido",
+                minlength: "El apellido debe tener al menos 3 caracteres"
+            },
+            "email-pago": {
+                required: "Por favor ingresa tu correo electrónico",
+                email: "Por favor ingresa un correo electrónico válido"
+            },
+            "direccion-pago": {
+                required: "Por favor ingresa tu dirección",
+                minlength: "La dirección debe tener al menos 10 caracteres"
+            },
+            "numero-Tarjeta": {
+                required: "Por favor ingresa tu número de tarjeta",
+                creditcard: "Por favor ingresa un número de tarjeta válido"
+            },
+            "fecha-Vencimiento": {
+                required: "Por favor ingresa la fecha de vencimiento de tu tarjeta"
+            },
+            "cvv": {
+                required: "Por favor ingresa el CVV de tu tarjeta",
+                minlength: "El CVV debe tener al menos 3 caracteres"
+            },
+            "nombre-titular": {
+                required: "Por favor ingresa el nombre del titular de la tarjeta",
+                minlength: "El nombre del titular debe tener al menos 3 caracteres"
+            },
+            "rut-titular": {
+                required: "Por favor ingresa el RUT del titular de la tarjeta"
+            }
+        }
+    });
+});
+
+$(document).ready(function () {
+    $("#boton-submit-pago").click(function () {
+
+        console.log($("#formulario-pago").valid());
+        if ($("#formulario-pago").valid()) {
+            $("#formulario-pago").submit();
+        }
+    });
+});

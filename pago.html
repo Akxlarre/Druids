@@ -137,48 +137,52 @@
                 <div class="container py-5">
                     <div class="row d-flex justify-content-center my-4">
                         <div class="col-md-8">
-                            <form>
-                                <div class="mb-3">
-                                    <label for="name" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="name" placeholder="Nombre">
+                            <form id="formulario-pago" class="needs-validation">
+                                <div class="mb-3 form-group">
+                                    <label for="nombre-pago" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre-pago" placeholder="Nombre">
+                                </div>
+                                <div class="mb-3 form-group">
+                                    <label for="apellido-pago" class="form-label">Apellido</label>
+                                    <input type="text" class="form-control" id="apellido-pago" placeholder="Apellido">
+                                </div>
+                                <div class="mb-3 form-group">
+                                    <label for="email-pago" class="form-label">Correo</label>
+                                    <input type="email" class="form-control" id="email-pago" placeholder="Correo">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">Correo</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Correo">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="address" class="form-label">Dirección</label>
-                                    <input type="text" class="form-control" id="address" placeholder="Dirección">
+                                    <label for="direccion-pago" class="form-label">Dirección</label>
+                                    <input type="text" class="form-control" id="direccion-pago" placeholder="Dirección">
                                 </div>
                                 <div class="container mt-3">
                                     <div class="card mb-3 contenedor-tarjeta">
                                         <div class="card-body">
                                             <h5 class="card-title">Tarjeta de Crédito/Débito</h5>
                                             <div class="row">
-                                                <div class="col-md-6">
-                                                    <label for="numeroTarjeta">Número de Tarjeta</label>
+                                                <div class="col-md-6 form-group">
+                                                    <label for="numero-Tarjeta">Número de Tarjeta</label>
                                                     <input type="text" class="form-control" id="numeroTarjeta"
                                                         placeholder="1234-5678-9012-3456">
                                                 </div>
-                                                <div class="col-md-3">
-                                                    <label for="fechaVencimiento">Fecha de Vencimiento</label>
+                                                <div class="col-md-3 form-group">
+                                                    <label for="fecha-Vencimiento">Fecha de Vencimiento</label>
                                                     <input type="text" class="form-control" id="fechaVencimiento"
                                                         placeholder="MM/YY">
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div class="col-md-3 form-group">
                                                     <label for="cvv">CVV</label>
                                                     <input type="text" class="form-control" id="cvv" placeholder="123">
                                                 </div>
                                             </div>
                                             <div class="row mt-3">
-                                                <div class="col-md-6">
-                                                    <label for="nombreTitular">Nombre del Titular</label>
+                                                <div class="col-md-6 form-group">
+                                                    <label for="nombre-Titular">Nombre del Titular</label>
                                                     <input type="text" class="form-control" id="nombreTitular"
                                                         placeholder="Nombre completo">
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <label for="dniTitular">Rut del Titular</label>
-                                                    <input type="text" class="form-control" id="dniTitular"
+                                                <div class="col-md-6 form-group">
+                                                    <label for="rut-Titular">Rut del Titular</label>
+                                                    <input type="text" class="form-control" id="rut-Titular"
                                                         placeholder="12345678">
                                                 </div>
                                             </div>
@@ -217,9 +221,8 @@
                                             <span><strong>$0000</strong></span>
                                         </li>
                                     </ul>
-                                    <button type="button" data-mdb-button-init data-mdb-ripple-init
-                                        class="btn btn-primary btn-lg btn-block"><a class="text-white"
-                                            href="pagoexitoso.html">
+                                    <button type="submit" id="boton-submit-pago" data-mdb-button-init data-mdb-ripple-init
+                                        class="btn btn-primary btn-lg btn-block">
                                             pagar
                                         </a>
                                     </button>
@@ -236,4 +239,11 @@
         <a class="p-5 text-white fs-4" href="sobreNosotros.html">Sobre Nosotros</a>
         <a class="p-5 text-white fs-4" href="contacto.html">Contacto</a>
     </footer>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!--jQuery validate-->
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<!-- Script -->
+<script src="js/scripts.js"></script>
+<script src="js/validaciones.js"></script>  
 </html>
