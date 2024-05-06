@@ -247,12 +247,4 @@ $(document).ready(function () {
     });
 });
 
-$(document).ready(function () {
-    $("#boton-submit-pago").click(function () {
 
-        console.log($("#formulario-pago").valid());
-        if ($("#formulario-pago").valid()) {
-            $("#formulario-pago").submit();
-        }
-    });
-});
