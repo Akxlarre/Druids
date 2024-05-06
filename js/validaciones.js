@@ -128,123 +128,51 @@ $(document).ready(function () {
 
 });
 
-// validar formulario contacto
-
 $(document).ready(function () {
-    $("#formulario-contacto").validate({
+    $("#form-pago").validate({
         rules: {
-            "nombre-contacto": {
+            "Primer-nombre-pago": {
                 required: true,
                 minlength: 3,
                 noEspacios: true,
             },
-            "email-contacto": {
+            "Apellido-pago": {
+                required: true,
+                minlength: 3,
+                noEspacios: true,
+            },
+            "Email-pago": {
                 required: true,
                 email: true,
                 emailConDominio: true,
             },
-            "mensaje-contacto": {
-                required: true,
-                minlength: 150,
-            }
-        },
-        messages: {
-            "nombre-contacto": {
-                required: "Por favor ingresa tu nombre",
-                minlength: "El nombre debe tener al menos 3 caracteres"
-            },
-            "email-contacto": {
-                required: "Por favor ingresa tu correo electrónico",
-                email: "Por favor ingresa un correo electrónico válido"
-            },
-            "mensaje-contacto": {
-                required: "Por favor ingresa un mensaje",
-                minlength: "El mensaje debe tener al menos 150 caracteres"
-            }
-        }
-    });
-});
-
-//validar formulario Pago
-$(document).ready(function () {
-    $("#formulario-pago").validate({
-        rules: {
-            "nombre-pago": {
-                required: true,
-                minlength: 3,
-                noEspacios: true,
-            },
-            "apellido-pago": {
-                required: true,
-                minlength: 3,
-                noEspacios: true,
-            },
-            "email-pago": {
-                required: true,
-                email: true,
-                emailConDominio: true,
-            },
-            "direccion-pago": {
-                required: true,
-                minlength: 10,
-            },
-            "numero-Tarjeta": {
-                required: true,
-                creditcard: true,
-            },
-            "fecha-Vencimiento": {
+            "Direccion-pago": {
                 required: true,
             },
-            "cvv": {
-                required: true,
-                minlength: 3,
-            },
-            "nombre-titular": {
-                required: true,
-                minlength: 3,
-                noEspacios: true,
-            },
-            "rut-titular": {
+            "Region": {
                 required: true,
             },
         },
         messages: {
-            "nombre-pago": {
+            "Primer-nombre-pago": {
                 required: "Por favor ingresa tu nombre",
                 minlength: "El nombre debe tener al menos 3 caracteres"
             },
-            "apellido-pago": {
+            "Apellido-pago": {
                 required: "Por favor ingresa tu apellido",
                 minlength: "El apellido debe tener al menos 3 caracteres"
             },
-            "email-pago": {
+            "Email-pago": {
                 required: "Por favor ingresa tu correo electrónico",
                 email: "Por favor ingresa un correo electrónico válido"
             },
-            "direccion-pago": {
+            "Direccion-pago": {
                 required: "Por favor ingresa tu dirección",
-                minlength: "La dirección debe tener al menos 10 caracteres"
             },
-            "numero-Tarjeta": {
-                required: "Por favor ingresa tu número de tarjeta",
-                creditcard: "Por favor ingresa un número de tarjeta válido"
-            },
-            "fecha-Vencimiento": {
-                required: "Por favor ingresa la fecha de vencimiento de tu tarjeta"
-            },
-            "cvv": {
-                required: "Por favor ingresa el CVV de tu tarjeta",
-                minlength: "El CVV debe tener al menos 3 caracteres"
-            },
-            "nombre-titular": {
-                required: "Por favor ingresa el nombre del titular de la tarjeta",
-                minlength: "El nombre del titular debe tener al menos 3 caracteres"
-            },
-            "rut-titular": {
-                required: "Por favor ingresa el RUT del titular de la tarjeta"
+            "Region": {
+                required: "Por favor selecciona una región",
             }
         }
     });
 });
-
 
