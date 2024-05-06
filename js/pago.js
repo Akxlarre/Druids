@@ -22,6 +22,10 @@ function cargarComunas(regionSeleccionada) {
     const comunas = regionesYComunas[regionSeleccionada];
     const $selectComunas = $("#comuna");
     $selectComunas.empty(); // Limpiar opciones anteriores
+    $selectComunas.append($("<option>", {
+        value: "0",
+        text: "Seleccione una comuna"
+    }));
     $.each(comunas, function (index, comuna) {
         $selectComunas.append($("<option>", {
             value: comuna,
@@ -39,3 +43,60 @@ $("#Region").on("change", function () {
 // Al cargar la página, cargar las comunas de la primera región por defecto
 const primeraRegion = Object.keys(regionesYComunas)[0];
 cargarComunas(primeraRegion);
+
+// Limitar el input de fecha de expiración a números y /
+$(document).ready(function() {
+    $('#Fecha-expiracion').on('input', function() {
+        var value = $(this).val();
+        // Validar caracteres permitidos (números y /)
+        value = value.replace(/[^0-9/]/g, '');
+        $(this).val(value);
+    });
+});
+
+// limitar el imput de Nombre-titular a solo letras, tildes , 1 espacio entre palabras
+$(document).ready(function() {
+    $('#Nombre-titular').on('input', function() {
+        var value = $(this).val();
+        // Validar caracteres permitidos (letras, tildes y espacios)
+        value = value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]/g, '');
+        value = value.replace(/\s{2,}/g, ' ');
+        $(this).val(value);
+    });
+});
+
+// Limitar el imput de número de tarjeta a solo números y espacios
+$(document).ready(function() {
+    $('#Numero-tarjeta').on('input', function() {
+        var value = $(this).val();
+        // Permitir solo números y guiones
+        value = value.replace(/[^0-9]/g, '');
+
+        if (value.length > 16) {
+            value = value.substr(0, 16);
+        }
+
+        // Eliminar guiones actuales para evitar conflictos
+        value = value.replace(/-/g, '');
+
+        // Agregar un guión después de cada grupo de cuatro dígitos
+        value = value.replace(/(\d{4})/g, '$1-');
+
+        // Eliminar un guión final si lo hay
+        value = value.replace(/-$/, '');
+        $(this).val(value);
+    });
+});
+
+$(document).ready(function() {
+    $('#zip').on('input', function() {
+        var value = $(this).val();
+        // Permitir solo números
+        value = value.replace(/[^0-9]/g, '');
+        
+        if (value.length > 7) {
+            value = value.substr(0, 7);
+        }
+        $(this).val(value);
+    });
+});

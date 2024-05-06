@@ -82,6 +82,53 @@ $.validator.addMethod("emailConDominio", function (value, element) {
     return this.optional(element) || emailRegex.test(value);
 }, "Por favor ingresa un correo electrónico válido");
 
+$.validator.addMethod("seleccionDropdown", function (value, element) {
+    return value != "0";
+}, "Por favor selecciona una opción");
+
+$.validator.addMethod("mesValido", function (value, element) {
+    var mes = value.substring(0, 2);
+    return mes >= '01' && mes <= '12';
+}, "Por favor ingresa un mes válido");
+
+$.validator.addMethod("añoValido", function (value, element) {
+    var hoy = new Date();
+    var añoActual = hoy.getFullYear().toString().slice(-2);
+    var añoIngresado = value.substring(3, 5);
+    return añoIngresado >= añoActual;
+}, "Por favor ingresa un año válido");
+
+// Función para validar el número de tarjeta  utilizando el algoritmo de Luhn
+function luhnCheck(value) {
+    // Eliminar espacios en blanco y guiones del número de tarjeta
+    var cardNumber = value.replace(/\s+/g, '').replace(/-/g, '');
+
+    // Convertir el número de tarjeta a un array de dígitos
+    var cardDigits = cardNumber.split('').map(Number);
+
+    // Calcular la suma de control utilizando el algoritmo de Luhn
+    var sum = 0;
+    var doubleUp = false;
+    for (var i = cardDigits.length - 1; i >= 0; i--) {
+        var digit = cardDigits[i];
+        if (doubleUp) {
+            digit *= 2;
+            if (digit > 9) {
+                digit -= 9;
+            }
+        }
+        sum += digit;
+        doubleUp = !doubleUp;
+    }
+
+    // La tarjeta de crédito es válida si la suma de control es divisible por 10
+    return sum % 10 === 0;
+}
+$.validator.addMethod('validarTarjeta', function(value, element) {
+    // Utilizar la función luhnCheck para validar el número de tarjeta de crédito
+    return luhnCheck(value);
+}, 'Por favor ingresa un número de tarjeta de crédito válido.');
+
 // validar formulario registro
 $(document).ready(function () {
 
@@ -142,7 +189,6 @@ $(document).ready(function () {
                 noEspacios: true,
             },
             "Email-pago": {
-                required: true,
                 email: true,
                 emailConDominio: true,
             },
@@ -151,7 +197,43 @@ $(document).ready(function () {
             },
             "Region": {
                 required: true,
+                seleccionDropdown: true,
             },
+            "comuna": {
+                required: true,
+                seleccionDropdown: true,
+            },
+            "zip": {
+                required: true,
+                digits: true,
+                minlength: 7,
+                maxlength: 7,
+            },
+            "metodo-pago": {
+                required: true,
+            },
+            "Nombre-titular": {
+                required: true,
+
+            },
+            "Numero-tarjeta": {
+                required: true,
+                validarTarjeta: true,
+                minlength: 19,
+            },
+            "Fecha-expiracion": {
+                required: true,
+                mesValido: true,
+                añoValido: true,
+                minlength: 5,
+                maxlength: 5,
+            },
+            "cvv": {
+                required: true,
+                digits: true,
+                minlength: 3,
+                maxlength: 3,
+            }
         },
         messages: {
             "Primer-nombre-pago": {
@@ -171,6 +253,40 @@ $(document).ready(function () {
             },
             "Region": {
                 required: "Por favor selecciona una región",
+            },
+            "comuna": {
+                required: "Por favor selecciona una comuna",
+            },
+            "zip": {
+                required: "Por favor ingresa tu código postal",
+                digits: "El código postal debe ser un número",
+                minlength: "El código postal debe tener 7 caracteres",
+                maxlength: "El código postal debe tener 7 caracteres",
+            },
+            "metodo-pago": {
+                required: "Por favor selecciona un método de pago",
+            },
+            "Nombre-titular": {
+                required: "Por favor ingresa el nombre del titular de la tarjeta",
+            },
+            "Numero-tarjeta": {
+                required: "Por favor ingresa el número de tarjeta",
+                minlength: "El número de tarjeta debe tener 16 digitos",
+                validarTarjeta: "Por favor ingresa un número de tarjeta válido",
+                
+            },
+            "Fecha-expiracion": {
+                required: "Por favor ingresa la fecha de expiración",
+                mesValido: "Por favor ingresa un mes válido",
+                añoValido: "Por favor ingresa un año válido",
+                minlength: "Por favor ingresa la fecha de expiración en el formato MM/YY",
+                maxlength: "Por favor ingresa la fecha de expiración en el formato MM/YY",
+            },
+            "cvv": {
+                required: "Por favor ingresa el CVV",
+                digits: "El CVV debe ser un número",
+                minlength: "El CVV debe tener al menos 3 caracteres",
+                maxlength: "El CVV debe tener como máximo 3 caracteres",
             }
         }
     });

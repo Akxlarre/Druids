@@ -11,12 +11,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!--jQuery validate-->
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-    <script src="js/validaciones.js"></script>
-    <script src="js/pago.js"></script>
-    <script src="js/scripts.js"></script>
     <title>Pago</title>
 </head>
 
@@ -197,25 +191,25 @@
                     <div class="row g-3">
                         <div class="col-sm-6 form-group">
                             <label for="Primer-nombre-pago" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="Primer-nombre-pago" placeholder="">
+                            <input type="text" class="form-control" id="Primer-nombre-pago" name="Primer-nombre-pago" placeholder="">
                         </div>
                         <div class="col-sm-6 form-group">
                             <label for="Apellido-pago" class="form-label">Apellido</label>
-                            <input type="text" class="form-control" id="Apellido-pago" placeholder="">
+                            <input type="text" class="form-control" id="Apellido-pago" name="Apellido-pago" placeholder="">
                         </div>
                         <div class="col-12 form-group">
                             <label for="Email-pago" class="form-label">Email <span
                                     class="text-muted">(Opcional)</span></label>
-                            <input type="email" class="form-control" id="Email-pago" placeholder="tu@example.com">
+                            <input type="email" class="form-control" id="Email-pago" name="Email-pago" placeholder="tu@example.com">
                         </div>
                         <div class="col-12 form-group">
                             <label for="Direccion-pago" class="form-label">Dirección</label>
-                            <input type="text" class="form-control" id="Direccion-pago" placeholder="Paicavi 123">
+                            <input type="text" class="form-control" id="Direccion-pago" name="Direccion-pago" placeholder="Paicavi 123">
                         </div>
                         <div class="col-md-5 form-group">
                             <label for="Region" class="form-label">Region</label>
-                            <select class="form-select" id="Region">
-                                <option value="">Seleccione...</option>
+                            <select class="form-select" id="Region" name="Region">
+                                <option value="0">Seleccione...</option>
                                 <option value="Región de Arica y Parinacota">Región de Arica y Parinacota</option>
                                 <option value="Región de Tarapacá">Región de Tarapacá</option>
                                 <option value="Región de Antofagasta">Región de Antofagasta</option>
@@ -235,45 +229,46 @@
                             </select>
                         </div>
                         <div class="col-md-4 form-group">
-                            <label for="comuna" class="form-label">Estado</label>
-                            <select class="form-select" id="comuna">
-
+                            <label for="comuna" class="form-label">Comuna</label>
+                            <select class="form-select" id="comuna" name="comuna">
                             </select>
                         </div>
                         <div class="col-md-3 form-group">
                             <label for="zip" class="form-label">Código postal</label>
-                            <input type="text" class="form-control" id="zip" placeholder="">
+                            <input type="text" class="form-control" id="zip" name="zip" placeholder="">
                         </div>
                     </div>
                     <hr class="my-4">
-                    <h4 class="mb-3">Pago</h4>
+                    <h4 class="mb-3">Metodo de pago</h4>
                     <div class="my-3 form-group">
                         <div class="form-check">
-                            <input id="credito" name="paymentMethod" type="radio" class="form-check-input">
-                            <label class="form-check-label" for="creditp">Tarjeta de crédito</label>
+                            <input id="credito" name="metodo-pago" type="radio" class="form-check-input">
+                            <label class="form-check-label" for="metodo-pago">Tarjeta de crédito</label>
                         </div>
                         <div class="form-check">
-                            <input id="debito" name="paymentMethod" type="radio" class="form-check-input">
-                            <label class="form-check-label" for="debito">Tarjeta de débito</label>
+                            <input id="debito" name="metodo-pago" type="radio" class="form-check-input">
+                            <label class="form-check-label" for="metodo-pago">Tarjeta de débito</label>
+                        </div>
+                        <div>
+                            <label for="metodo-pago" class="error"></label>
                         </div>
                     </div>
                     <div class="row gy-3">
                         <div class="col-md-6 form-group">
                             <label for="Nombre-titular" class="form-label">Nombre en la tarjeta</label>
-                            <input type="text" class="form-control" id="Nombre-titular" placeholder="">
-                            <small class="text-muted">Nombre completo como se muestra en la tarjeta</small>
+                            <input type="text" class="form-control" id="Nombre-titular" name="Nombre-titular" placeholder="">
                         </div>
                         <div class="col-md-6 form-group">
-                            <label for="numero-tarjeta"" class=" form-label">Número de tarjeta de crédito</label>
-                            <input type="text" class="form-control" id="numero-tarjeta" placeholder="">
+                            <label for="Numero-tarjeta" class="form-label">Número de tarjeta de crédito</label>
+                            <input type="text" class="form-control" id="Numero-tarjeta" name="Numero-tarjeta" placeholder="">
                         </div>
                         <div class="col-md-3 form-group">
-                            <label for="echa-expiracion" class="form-label">Vencimiento</label>
-                            <input type="text" class="form-control" id="fecha-expiracion" placeholder="">
+                            <label for="Fecha-expiracion" class="form-label">Vencimiento</label>
+                            <input type="text" class="form-control" id="Fecha-expiracion" name="Fecha-expiracion" placeholder="MM/YY">
                         </div>
                         <div class="col-md-3 form-group">
                             <label for="cvv" class="form-label">CVV</label>
-                            <input type="text" class="form-control" id="cvv" placeholder="">
+                            <input type="text" class="form-control" id="cvv" name="cvv" >
                         </div>
                     </div>
                     <hr class="my-4">
@@ -288,5 +283,11 @@
         <a class="p-5 text-white fs-4" href="contacto.html">Contacto</a>
     </footer>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!--jQuery validate-->
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="js/validaciones.js"></script>
+<script src="js/pago.js"></script>
+<script src="js/scripts.js"></script>
 
 </html>
