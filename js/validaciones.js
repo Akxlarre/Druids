@@ -58,7 +58,7 @@ $(document).ready(function() {
 //nuevos metodos de validacion
 $.validator.addMethod("noEspacios", function(value, element) {
     return this.optional(element) || !/\s/.test(value);
-}, "El nombre de usuario no puede contener espacios");
+}, "Este campo no puede contener espacios");
 
 $.validator.addMethod("strongPassword", function (value, element) {
     // Expresiones regulares para validar los criterios de la contraseña
@@ -76,6 +76,14 @@ $.validator.addMethod("strongPassword", function (value, element) {
         numeroRegex.test(value) &&
         especialRegex.test(value);
 }, "La contraseña debe cumplir con los requerimientos");
+
+$.validator.addMethod("sinEspaciosConsecutivos", function (value, element) {
+    return this.optional(element) || !/\s{2,}/.test(value);
+}, "Este campo no puede contener espacios consecutivos");
+
+$.validator.addMethod("sinEspacioInicioFin", function (value, element) {
+    return this.optional(element) || /^\S.*\S$/.test(value);
+}, "Este campo no puede comenzar ni terminar con espacios");
 
 $.validator.addMethod("emailConDominio", function (value, element) {
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -175,6 +183,7 @@ $(document).ready(function () {
 
 });
 
+//validar formulario de pago
 $(document).ready(function () {
     $("#form-pago").validate({
         rules: {
@@ -291,4 +300,42 @@ $(document).ready(function () {
         }
     });
 });
-
+//validar formulario de contacto
+$(document).ready(function () {
+    $("#formulario-contacto").validate({
+        rules: {
+            "nombre-contacto": {
+                required: true,
+                sinEspaciosConsecutivos: true,
+                sinEspacioInicioFin: true,
+                minlength: 3,
+                maxlength: 20,
+            },
+            "email-contacto": {
+                required: true,
+                sinEspacioInicioFin: true,
+                email: true,
+                emailConDominio: true,
+            },
+            "mensaje-contacto": {
+                required: true,
+                minlength: 50,
+            }
+        },
+        messages: {
+            "nombre-contacto": {
+                required: "Por favor ingresa tu nombre",
+                minlength: "El nombre debe tener al menos 3 caracteres",
+                maxlength: "El nombre debe tener como máximo 20 caracteres"
+            },
+            "email-contacto": {
+                required: "Por favor ingresa tu correo electrónico",
+                email: "Por favor ingresa un correo electrónico válido"
+            },
+            "mensaje-contacto": {
+                required: "Por favor ingresa tu mensaje",
+                minlength: "El mensaje debe tener al menos 50 caracteres"
+            }
+        }
+    });
+});
