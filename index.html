@@ -104,7 +104,8 @@
                             </div>
                             <div class="mb-3 form-group">
                                 <label for="email-registro" class="form-label fs-4">Email</label>
-                                <input type="email"  class="form-control fs-5" id="email-registro" name="email-registro" placeholder="Ingresa tu email" required>                            </div>
+                                <input type="email"  class="form-control fs-5" id="email-registro" name="email-registro" placeholder="Ingresa tu email">                            
+                            </div>
                             <div class="mb-3 form-group">
                                 <label for="password-registro" class="form-label fs-4">Contraseña</label>
                                 <div class="text-danger font-weight-bold d-flex" id="requerimiento-longitud"><p class="requerimiento">Al menos 8 caracteres</p><img class="validador" src="img/empty-svgrepo-com.svg"></div>
@@ -114,15 +115,27 @@
                                 <div class="text-danger font-weight-bold d-flex" id="requerimiento-especial"><p class="requerimiento">Al menos un carácter especial</p><img class="validador" src="img/empty-svgrepo-com.svg"></div>                                
                                 <div class="input-group">
                                     <input type="password" class="form-control fs-5" id="password-registro" name="password-registro" placeholder="Ingresa tu contraseña">
-                                    <button type="button" id="ver-contrasena">
-                                        <img src="img/mostrar-pass.svg" alt="Mostrar contraseña" class="icono-mostrar">
-                                        <img src="img/ocultar-pass.svg" alt="Ocultar contraseña" class="icono-ocultar">
+                                    <button type="button" class="btn" id="ver-contrasena">
+                                        <img src="img/mostrar-pass.svg" alt="Mostrar contraseña" class="ver-contraseña mostrar-pass">
+                                        <img src="img/ocultar-pass.svg" alt="Ocultar contraseña" class="ver-contraseña ocultar-pass">
                                     </button>
+                                </div>
+                                <div>
+                                    <label for="password-registro" class="error"></label>
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label for="password-registro-confirmar" class="form-label fs-4">Confirmar contraseña</label>
-                                <input type="password" class="form-control fs-5" id="password-registro-confirmar" name="password-registro-confirmar" placeholder="Confirma tu contraseña" required>
+                                <div class="input-group">
+                                    <input type="password" class="form-control fs-5" id="password-registro-confirmar" name="password-registro-confirmar" placeholder="Confirma tu contraseña">
+                                    <button type="button" class="btn" id="ver-contrasena-confirmar">
+                                        <img src="img/mostrar-pass.svg" alt="Mostrar contraseña" class="ver-contraseña mostrar-repass">
+                                        <img src="img/ocultar-pass.svg" alt="Ocultar contraseña" class="ver-contraseña ocultar-repass">
+                                    </button>
+                                </div>
+                                <div>
+                                    <label for="password-registro-confirmar" class="error"></label>
+                                </div>
                             </div>
                             <div class="d-grid gap-2">
                                 <button type="submit" class="btn btn-primary fs-4">Registrarse</button>
