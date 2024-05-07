@@ -4,10 +4,12 @@ $(document).ready(function() {
         var tipo = $('#password-registro').attr('type');
         if (tipo == 'password') {
             $('#password-registro').attr('type', 'text');
-            $(this).text('Ocultar contraseña');
+            $('.icono-mostrar').hide();
+            $('.icono-ocultar').show();
         } else {
             $('#password-registro').attr('type', 'password');
-            $(this).text('Ver contraseña');
+            $('.icono-ocultar').hide();
+            $('.icono-mostrar').show();
         }
     });
 });
