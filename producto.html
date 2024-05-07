@@ -184,13 +184,15 @@
                             <h4>Estado con/sin Stock</h4>
                             <p class="precio-producto my-4">Precio del producto</p>
                             <div class="row">
-                                <div class="col my-4">
-                                    <label for="cantidad">Cantidad</label>
-                                    <input type="number" class="form-control" id="cantidad" value="1">
-                                </div>
-                                <div class="col my-5">
-                                    <button type="button" class="btn btn-primary">Agregar al carrito</button>
-                                </div>
+                                <form>
+                                    <div class="col my-4">
+                                        <label for="cantidad">Cantidad</label>
+                                        <input type="number" class="form-control" id="cantidad" name="cantidad" min="1" >
+                                    </div>
+                                    <div class="col my-5">
+                                        <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
