@@ -39,6 +39,17 @@
 
 }
 
+.requerimiento {
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-left: 0.7rem;
+}
+.validador {
+    width: 1rem;
+    margin-left: 0.5rem;
+    position: relative;
+    top: -0.5rem;
+}
 .basurero {
     width: 2rem;
 }
