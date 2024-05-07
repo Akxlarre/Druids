@@ -334,6 +334,10 @@ $(document).ready(function () {
                 minlength: "El CVV debe tener al menos 3 caracteres",
                 maxlength: "El CVV debe tener como máximo 3 caracteres",
             }
+        },
+        submitHandler: function(form) {
+            // redirigir a la página de confirmación
+            window.location.href = "pagoexitoso.html";
         }
     });
 });

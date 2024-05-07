@@ -54,8 +54,13 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#Fecha-expiracion').on('input', function() {
         var value = $(this).val();
-        // Validar caracteres permitidos (números y /)
-        value = value.replace(/[^0-9/]/g, '');
+        // permitir solo números
+        value = value.replace(/[^0-9]/g, '');
+        // Formatear la fecha
+        value = value.replace(/(\d{2})(\d{2})/, '$1/$2');
+        if (value.length > 5) {
+            value = value.substr(0, 5);
+        }
         $(this).val(value);
     });
 });
