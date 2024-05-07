@@ -137,6 +137,34 @@ $.validator.addMethod('validarTarjeta', function(value, element) {
     return luhnCheck(value);
 }, 'Por favor ingresa un número de tarjeta de crédito válido.');
 
+$.validator.addMethod("validarRut", function(value, element) {
+    // Remover puntos del RUT y convertir guion en '-'
+    value = value.replace(/\./g,'').replace(/\-/g,'-');
+    
+    // Validar el formato del RUT
+    if (!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test(value))
+        return false;
+    
+    // Separar el número del dígito verificador
+    var rutSplit = value.split('-');
+    var rutNumber = rutSplit[0]; // Número del RUT
+    
+    // Calcular el dígito verificador esperado
+    var M = 0;
+    var S = 1;
+    var T = parseInt(rutNumber);
+
+    while (T) {
+        S = (S + T % 10 * (9 - M++ % 6)) % 11;
+        T = Math.floor(T / 10);
+    }
+
+    var digitoVerificadorEsperado = S ? S - 1 : 'k';
+    
+    // Comparar el dígito verificador esperado con el dígito verificador ingresado
+    return digitoVerificadorEsperado.toString().toLowerCase() === rutSplit[1].toLowerCase();
+}, "Por favor, ingresa un RUT válido.");
+
 // validar formulario registro
 $(document).ready(function () {
 
@@ -197,6 +225,11 @@ $(document).ready(function () {
                 minlength: 3,
                 noEspacios: true,
             },
+            "rut": {
+                required: true,
+                minlength: 8,
+                validarRut: true,
+            },
             "Email-pago": {
                 email: true,
                 emailConDominio: true,
@@ -252,6 +285,10 @@ $(document).ready(function () {
             "Apellido-pago": {
                 required: "Por favor ingresa tu apellido",
                 minlength: "El apellido debe tener al menos 3 caracteres"
+            },
+            "rut": {
+                required: "Por favor ingresa tu RUT",
+                minlength: "El RUT debe tener entre 8 y 9 caracteres",
             },
             "Email-pago": {
                 required: "Por favor ingresa tu correo electrónico",

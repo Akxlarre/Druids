@@ -40,9 +40,15 @@ $("#Region").on("change", function () {
     cargarComunas(regionSeleccionada);
 });
 
-// Al cargar la página, cargar las comunas de la primera región por defecto
-const primeraRegion = Object.keys(regionesYComunas)[0];
-cargarComunas(primeraRegion);
+// Agregar la opción "Seleccione una comuna" al cargar la página
+$(document).ready(function() {
+    const $selectComunas = $("#comuna");
+    $selectComunas.empty(); // Limpiar opciones anteriores
+    $selectComunas.append($("<option>", {
+        value: "0",
+        text: "Seleccione una comuna"
+    }));
+});
 
 // Limitar el input de fecha de expiración a números y /
 $(document).ready(function() {
@@ -96,6 +102,44 @@ $(document).ready(function() {
         
         if (value.length > 7) {
             value = value.substr(0, 7);
+        }
+        $(this).val(value);
+    });
+});
+
+$(document).ready(function() {
+    $('#cvv').on('input', function() {
+        var value = $(this).val();
+        // Permitir solo números
+        value = value.replace(/[^0-9]/g, '');
+        
+        if (value.length > 3) {
+            value = value.substr(0, 3);
+        }
+        $(this).val(value);
+    });
+});
+
+$(document).ready(function() {
+    $('#codigo-promo').on('input', function() {
+        var value = $(this).val();
+        // Permitir solo letras y números, sin espacios
+        value = value.replace(/[^a-zA-Z0-9]/g, '');
+        //el valor se convierte en mayúsculas
+        value = value.toUpperCase();
+        $(this).val(value);
+    });
+});
+
+$(document).ready(function() {
+    $('#rut').on('input', function() {
+        var value = $(this).val();
+        // Permitir solo números
+        value = value.replace(/[^0-9kK]/g, '');
+        // Formatear el rut
+        value = value.replace(/(\d{1,2})(\d{3})(\d{3})([0-9kK]{1})/, '$1.$2.$3-$4');
+        if (value.length > 12) {
+            value = value.substr(0, 12);
         }
         $(this).val(value);
     });
