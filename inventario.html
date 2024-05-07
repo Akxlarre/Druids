@@ -270,26 +270,26 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form id="formulario-registrar-producto" class="needs-validation">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="nombreProducto">Nombre del producto</label>
-                                        <input type="text" class="form-control" id="nombreProducto" placeholder="Ingrese el nombre del producto">
+                                        <label for="nombre-Producto">Nombre del producto</label>
+                                        <input type="text" class="form-control" id="nombre-Producto" name="nombre-Producto" placeholder="Ingrese el nombre del producto">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="marcaProducto">Precio</label>
-                                        <input type="text" class="form-control"  placeholder="Ingrese el precio del producto">
+                                        <label for="marca-Producto">Precio</label>
+                                        <input type="text" class="form-control" id="marca-Producto" name="marca-Producto" placeholder="Ingrese el precio del producto">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="subcategoriaProducto">Categoría</label>
-                                        <select class="form-select" id="subcategoriaProducto">
+                                        <label for="subcategoria-Producto">Categoría</label>
+                                        <select class="form-select" id="subcategoria-Producto" name="subcategoria-Producto">
                                             <option value="">Seleccionar categoría</option>
                                             <option value="categoria1">categoría 1</option>
                                             <option value="categoria2">categoría 2</option>
@@ -303,48 +303,48 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="stockProducto">Stock</label>
-                                        <input type="number" class="form-control" id="stockProducto" placeholder="Ingrese el stock del producto">
+                                        <label for="stock-Producto">Stock</label>
+                                        <input type="number" class="form-control" id="stock-Producto" name="stock-Producto" placeholder="Ingrese el stock del producto">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="descripcionProducto">Descripción</label>
-                                        <textarea class="form-control" id="descripcionProducto" rows="3" placeholder="Ingrese la descripción del producto"></textarea>
+                                        <label for="descripcion-Producto">Descripción</label>
+                                        <textarea class="form-control" id="descripcion-Producto" name="descripcion-Producto" rows="3" placeholder="Ingrese la descripción del producto"></textarea>
                                     </div>
                                 </div>
                                 <!--Descripcion y cuidados-->
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="descripcionProducto">Descripción y cuidados</label>
-                                        <textarea class="form-control" id="descripcionProducto" rows="3" placeholder="Ingrese la descripción y cuidados del producto"></textarea>
+                                        <label for="descripcion-cuidado">Descripción y cuidados</label>
+                                        <textarea class="form-control" id="descripcion-cuidado" name="descripcion-cuidado" rows="3" placeholder="Ingrese la descripción y cuidados del producto"></textarea>
                                     </div>
                                 </div>
                                 <!--Imagenes del producto-->
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="imagenesProducto">Imágenen Principal</label>
-                                        <input type="file" class="form-control"  multiple>
+                                        <label for="imagen-Producto1">Imágenen Principal</label>
+                                        <input type="file" class="form-control" id="imagen-Producto1" name="imagen-Producto1"  multiple>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="imagenesProducto">Imágen del producto 2</label>
-                                        <input type="file" class="form-control"  multiple>
+                                        <label for="imagen-Producto2">Imágen del producto 2</label>
+                                        <input type="file" class="form-control" id="imagen-Producto2" name="imagen-Producto2"  multiple>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="imagenesProducto">Imágen del producto 3</label>
-                                        <input type="file" class="form-control"  multiple>
+                                        <label for="imagen-Producto3">Imágen del producto 3</label>
+                                        <input type="file" class="form-control" id="imagen-Producto3" name="imagen-Producto3" multiple>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="imagenesProducto">Imágen del producto 4</label>
-                                        <input type="file" class="form-control"  multiple>
+                                        <label for="imagen-Producto4">Imágen del producto 4</label>
+                                        <input type="file" class="form-control" id="imagen-Producto4" name="imagen-Producto4"  multiple>
                                     </div>
                                 </div>
                             </div>
@@ -352,7 +352,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary">Registrar</button>
+                        <button type="submit" class="btn btn-primary">Registrar</button>
                     </div>
                 </div>
             </div>
@@ -365,26 +365,26 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form id="form-editar">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="nombreProductoEditar">Nombre del producto</label>
-                                        <input type="text" class="form-control" id="nombreProductoEditar" placeholder="Ingrese el nombre del producto">
+                                        <label for="nombre-Producto-Editar">Nombre del producto</label>
+                                        <input type="text" class="form-control" id="nombre-Producto-Editar" name="nombre-Producto-Editar" placeholder="Ingrese el nombre del producto">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="precioProductoEditar">Precio</label>
-                                        <input type="text" class="form-control" id="precioProductoEditar" placeholder="Ingrese el precio del producto">
+                                        <label for="precio-Producto-Editar">Precio</label>
+                                        <input type="text" class="form-control" id="precio-Producto-Editar" name="precio-Producto-Editar" placeholder="Ingrese el precio del producto">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="subcategoriaProductoEditar">Categoría</label>
-                                        <select class="form-select" id="subcategoriaProductoEditar">
+                                        <label for="subcategoria-Producto-Editar">Categoría</label>
+                                        <select class="form-select" id="subcategoria-Producto-Editar" name="subcategoria-Producto-Editar">
                                             <option value="">Seleccionar categoría</option>
                                             <option value="categoria1">categoría 1</option>
                                             <option value="categoria2">categoría 2</option>
@@ -398,8 +398,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="stockProductoEditar">Stock</label>
-                                        <input type="number" class="form-control" id="stockProductoEditar" placeholder="Ingrese el stock del producto">
+                                        <label for="stock-Producto-Editar">Stock</label>
+                                        <input type="number" class="form-control" id="stock-Producto-Editar" name="subcategoria-Producto-Editar" placeholder="Ingrese el stock del producto">
                                     </div>
                                 </div>
                             </div>
@@ -407,37 +407,37 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="descripcionProductoEditar">Descripción</label>
-                                        <textarea class="form-control" id="descripcionProductoEditar" rows="3" placeholder="Ingrese la descripción del producto"></textarea>
+                                        <textarea class="form-control" id="descripcion-Producto-Editar" name="descripcion-Producto-Editar" rows="3" placeholder="Ingrese la descripción del producto"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="cuidadosProductoEditar">Descripción y cuidados</label>
-                                        <textarea class="form-control" id="cuidadosProductoEditar" rows="3" placeholder="Ingrese la descripción y cuidados del producto"></textarea>
+                                        <label for="cuidados-Producto-Editar">Descripción y cuidados</label>
+                                        <textarea class="form-control" id="cuidados-Producto-Editar" name="cuidados-Producto-Editar" rows="3" placeholder="Ingrese la descripción y cuidados del producto"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="imagenesProductoEditar">Imágen Principal (opcional)</label>
-                                        <input type="file" class="form-control"  multiple>
+                                        <label for="imagen-Producto-Editar1">Imágen Principal (opcional)</label>
+                                        <input type="file" class="form-control" id="imagen-Producto-Editar1" name="imagen-Producto-Editar1"  multiple>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="imagenesProductoEditar">Imágen del producto 2 (opcional)</label>
-                                        <input type="file" class="form-control"  multiple>
+                                        <label for="imagen-Producto-Editar2">Imágen del producto 2 (opcional)</label>
+                                        <input type="file" class="form-control" id="imagen-Producto-Editar2" name="imagen-Producto-Editar2"  multiple>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="imagenesProductoEditar">Imágen del producto 3 (opcional)</label>
-                                        <input type="file" class="form-control"  multiple>
+                                        <label for="imagen-Producto-Editar3">Imágen del producto 3 (opcional)</label>
+                                        <input type="file" class="form-control" id="imagen-Producto-Editar3"  name="imagen-Producto-Editar3 multiple>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="imagenesProductoEditar">Imágen del producto 4 (opcional)</label>
-                                        <input type="file" class="form-control"  multiple>
+                                        <label for="imagen-Producto-Editar4">Imágen del producto 4 (opcional)</label>
+                                        <input type="file" class="form-control" id="imagen-Producto-Editar4" name="imagen-Producto-Editar4" multiple>
                                     </div>
                                 </div>
                             </div>
@@ -445,7 +445,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary">Guardar cambios</button>
+                        <button type="submit" class="btn btn-primary">Guardar cambios</button>
                     </div>
                 </div>
             </div>
@@ -457,4 +457,10 @@
     <a class="p-5 text-white fs-4" href="sobreNosotros.html">Sobre Nosotros</a>
     <a class="p-5 text-white fs-4" href="contacto.html">Contacto</a>
 </footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!--jQuery validate-->
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="js/validaciones.js"></script>
+<script src="js/pago.js"></script>
+<script src="js/scripts.js"></script>
 </html>
