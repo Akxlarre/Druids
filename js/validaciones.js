@@ -420,6 +420,8 @@ $(document).ready(function () {
         }
     });
 });
+
+// Validar formulario de editar producto
         
 $(document).ready(function () {
     $("#form-editar").validate({
@@ -496,6 +498,45 @@ $(document).ready(function () {
             },
             "imagen-Producto-Editar4": {
                 required: "Por favor ingresa la imagen 4 del producto",
+            },
+        }
+    });
+});
+
+// Validar formulario de editar perfil
+
+$(document).ready(function () {
+    $("#formulario-editar-perfil").validate({
+        rules: {
+            "nombre-perfil": {
+                required: true,
+                sinEspaciosConsecutivos: true,
+                sinEspacioInicioFin: true,
+                minlength: 3,
+                maxlength: 20,
+            },
+            "email-perfil": {
+                required: true,
+                sinEspacioInicioFin: true,
+                email: true,
+                emailConDominio: true,
+            },
+            "direccion-perfil": {
+                required: true,
+            },
+        },
+        messages: {
+            "nombre-perfil": {
+                required: "Por favor ingresa tu nombre",
+                minlength: "El nombre debe tener al menos 3 caracteres",
+                maxlength: "El nombre debe tener como máximo 20 caracteres"
+            },
+            "email-perfil": {
+                required: "Por favor ingresa tu correo electrónico",
+                email: "Por favor ingresa un correo electrónico válido"
+            },
+            "direccion-perfil": {
+                required: "Por favor ingresa tu dirección",
             },
         }
     });

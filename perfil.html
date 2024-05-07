@@ -194,41 +194,43 @@
                     </div>
                     <!-- Modal body -->
                     <div class="modal-body">
-                        <div class="row mb-3">
-                            <div class="col-sm-3">
-                                <h6 class="mb-0">Nombre</h6>
+                        <form id="formulario-editar-perfil" class="needs-validation">
+                            <div class="row mb-3">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Nombre</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary form-group">
+                                    <input type="text" class="form-control" id="nombre-perfil" name="nombre-perfil" placeholder="Pepito">
+                                </div>
                             </div>
-                            <div class="col-sm-9 text-secondary">
-                                <input type="text" class="form-control" value="Pepito">
+                            <div class="row mb-3">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Email</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary form-group">
+                                    <input type="text" class="form-control" id="email-perfil" name="email-perfil" placeholder="fip@jukmuh.al" >
+                                </div>
                             </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-3">
-                                <h6 class="mb-0">Email</h6>
+                            <div class="row mb-3">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Direccion</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary form-group">
+                                    <input type="text" class="form-control" id="direccion-perfil" name="direccion-perfil"  placeholder="Concepcion, San andres 123">
+                                </div>
                             </div>
-                            <div class="col-sm-9 text-secondary">
-                                <input type="text" class="form-control" value="fip@jukmuh.al">
+                            <div class="col-md-12 mb-2">
+                                <div class="form-group">
+                                    <label for="imagen-perfil">Imágen de perfil (opcional)</label>
+                                    <input type="file" class="form-control" id="imagen-perfil" name="imagen-perfil"  multiple>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-3">
-                                <h6 class="mb-0">Direccion</h6>
+                            <div class="row">
+                                <div class="col-sm-12 d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                                </div>
                             </div>
-                            <div class="col-sm-9 text-secondary">
-                                <input type="text" class="form-control" value="Concepcion, San andres 123">
-                            </div>
-                        </div>
-                        <div class="col-md-12 mb-2">
-                            <div class="form-group">
-                                <label for="imagenesProducto">Imágen de perfil</label>
-                                <input type="file" class="form-control"  multiple>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-12 d-flex justify-content-end">
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                     <!-- Modal footer -->
                     <div class="modal-footer">
@@ -323,5 +325,9 @@
     <a class="p-5 text-white fs-4" href="sobreNosotros.html">Sobre Nosotros</a>
     <a class="p-5 text-white fs-4" href="contacto.html">Contacto</a>
 </footer>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!--jQuery validate-->
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="js/validaciones.js"></script>
+<script src="js/scripts.js"></script>
 </html>
