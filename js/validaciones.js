@@ -339,3 +339,164 @@ $(document).ready(function () {
         }
     });
 });
+$(document).ready(function () {
+    $("#formulario-registrar-producto").validate({
+        rules: {
+            "nombre-Producto": {
+                required: true,
+                sinEspaciosConsecutivos: true,
+                sinEspacioInicioFin: true,
+                minlength: 3,
+                maxlength: 20,
+            },
+            "precio-Producto": {
+                required: true,      
+            },
+            "subcategoria-Producto": {
+                required: true,
+                seleccionDropdown: true,
+            },
+            "stock-Producto": {
+                required: true,
+                digits: true,
+            },
+            "descripcion-Producto": {
+                required: true,
+                minlength: 50,
+            },
+            "descripcion-Cuidado": {
+                required: true,
+                minlength: 50,
+            },
+            "imagen-Producto1": {
+                required: true,
+            },
+            "imagen-Producto2": {
+                required: true,
+            },
+            "imagen-Producto3": {
+                required: true,
+            },
+            "imagen-Producto4": {
+                required: true,
+            },
+        },
+        messages: {
+            "nombre-Producto": {
+                required: "Por favor ingresa el nombre del producto",
+                minlength: "El nombre debe tener al menos 3 caracteres",
+                maxlength: "El nombre debe tener como máximo 20 caracteres"
+            },
+            "precio-Producto": {
+                required: "Por favor ingresa el precio del producto",
+            },
+            "subcategoria-Producto": {
+                required: "Por favor selecciona una subcategoría",
+            },
+            "stock-Producto": {
+                required: "Por favor ingresa el stock del producto",
+                digits: "El stock debe ser un número",
+            },
+            "descripcion-Producto": {
+                required: "Por favor ingresa la descripción del producto",
+                minlength: "La descripción debe tener al menos 50 caracteres"
+            },
+            "descripcion-Cuidado": {
+                required: "Por favor ingresa la descripción de cuidado del producto",
+                minlength: "La descripción de cuidado debe tener al menos 50 caracteres"
+            },
+            "imagen-Producto1": {
+                required: "Por favor ingresa la imagen 1 del producto",
+            },
+            "imagen-Producto2": {
+                required: "Por favor ingresa la imagen 2 del producto",
+            },
+            "imagen-Producto3": {
+                required: "Por favor ingresa la imagen 3 del producto",
+            },
+            "imagen-Producto4": {
+                required: "Por favor ingresa la imagen 4 del producto",
+            },
+        }
+    });
+});
+        
+$(document).ready(function () {
+    $("#form-editar").validate({
+        rules: {
+            "nombre-Producto-Editar": {
+                required: true,
+                sinEspaciosConsecutivos: true,
+                sinEspacioInicioFin: true,
+                minlength: 3,
+                maxlength: 20,
+            },
+            "precio-Producto-Editar": {
+                required: true,      
+            },
+            "subcategoria-Producto-Editar": {
+                required: true,
+                seleccionDropdown: true,
+            },
+            "stock-Producto-Editar": {
+                required: true,
+            },
+            "descripcion-Producto-Editar": {
+                required: true,
+                minlength: 50,
+            },
+            "cuidados-Producto-Editar": {
+                required: true,
+                minlength: 50,
+            },
+            "imagen-Producto-Editar1": {
+                required: true,
+            },
+            "imagen-Producto-Editar2": {
+                required: true,
+            },
+            "imagen-Producto-Editar3": {
+                required: true,
+            },
+            "imagen-Producto-Editar4": {
+                required: true,
+            },
+        },
+        messages: {
+            "nombre-Producto-Editar": {
+                required: "Por favor ingresa el nombre del producto",
+                minlength: "El nombre debe tener al menos 3 caracteres",
+                maxlength: "El nombre debe tener como máximo 20 caracteres"
+            },
+            "precio-Producto-Editar": {
+                required: "Por favor ingresa el precio del producto",
+            },
+            "subcategoria-Producto-Editar": {
+                required: "Por favor selecciona una subcategoría",
+            },
+            "stock-Producto-Editar": {
+                required: "Por favor ingresa el stock del producto",
+            },
+            "descripcion-Producto-Editar": {
+                required: "Por favor ingresa la descripción del producto",
+                minlength: "La descripción debe tener al menos 50 caracteres"
+            },
+            "cuidados-Producto-Editar": {
+                required: "Por favor ingresa la descripción de cuidado del producto",
+                minlength: "La descripción de cuidado debe tener al menos 50 caracteres"
+            },
+            "imagen-Producto-Editar1": {
+                required: "Por favor ingresa la imagen 1 del producto",
+            },
+            "imagen-Producto-Editar2": {
+                required: "Por favor ingresa la imagen 2 del producto",
+            },
+            "imagen-Producto-Editar3": {
+                required: "Por favor ingresa la imagen 3 del producto",
+            },
+            "imagen-Producto-Editar4": {
+                required: "Por favor ingresa la imagen 4 del producto",
+            },
+        }
+    });
+});
