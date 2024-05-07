@@ -54,3 +54,25 @@
     width: 1.5rem;
     position: relative;
 }
+#boton-ver-contraseña{
+    /* al precionar el boton no tenga un borde */
+    border: none;
+    background-color: transparent;
+}
+#boton-ver-contraseña-confirmar{
+    /* al precionar el boton no tenga un borde */
+    border: none;
+    background-color: transparent;
+}
+
+.form-check-input{
+    width: 1.2rem;
+    border-color: black;
+}
+.form-control{
+    border-color: black;
+}
+
+label{
+    color: black;
+}

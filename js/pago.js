@@ -54,12 +54,16 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#Fecha-expiracion').on('input', function() {
         var value = $(this).val();
-        // permitir solo números
-        value = value.replace(/[^0-9]/g, '');
-        // Formatear la fecha
-        value = value.replace(/(\d{2})(\d{2})/, '$1/$2');
+        // Permitir solo números y /
+        value = value.replace(/[^0-9/]/g, '');
+        // Limitar la longitud a 5 caracteres (MM/AA)
         if (value.length > 5) {
             value = value.substr(0, 5);
+        }
+        // Verificar si se ingresó '/' en el tercer dígito (mes)
+        if (value.length === 3 && value[2] !== '/') {
+            // Si no se ingresó '/', insertarlo automáticamente
+            value = value.substr(0, 2) + '/' + value.substr(2);
         }
         $(this).val(value);
     });

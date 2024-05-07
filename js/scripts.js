@@ -3,7 +3,7 @@ $(document).ready(function() {
 
     $('.ocultar-pass').hide();
     // Mostrar y ocultar contraseña
-    $('#ver-contrasena').click(function() {
+    $('#boton-ver-contraseña').click(function() {
         var tipo = $('#password-registro').attr('type');
         if (tipo == 'password') {
             $('#password-registro').attr('type', 'text');
@@ -20,7 +20,7 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('.ocultar-repass').hide();
     // Mostrar y ocultar contraseña
-    $('#ver-contrasena-confirmar').click(function() {
+    $('#boton-ver-contraseña-confirmar').click(function() {
         var tipo = $('#password-registro-confirmar').attr('type');
         if (tipo == 'password') {
             $('#password-registro-confirmar').attr('type', 'text');
