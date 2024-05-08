@@ -73,6 +73,10 @@
     border-color: black;
 }
 
+.form-select{
+    border-color: black;
+}
+
 label{
     color: black;
 }
