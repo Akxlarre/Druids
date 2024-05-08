@@ -105,6 +105,9 @@ $.validator.addMethod("añoValido", function (value, element) {
     var añoIngresado = value.substring(3, 5);
     return añoIngresado >= añoActual;
 }, "Por favor ingresa un año válido");
+$.validator.addMethod('soloLetras', function(value, element) {
+    return this.optional(element) || /^[a-z áãâäàéêëèíîïìóõôöòúûüùçñ]+$/i.test(value);
+}, "Por favor ingresa solo caracteres alfabéticos");
 
 // Función para validar el número de tarjeta  utilizando el algoritmo de Luhn
 function luhnCheck(value) {
@@ -219,11 +222,14 @@ $(document).ready(function () {
                 required: true,
                 minlength: 3,
                 noEspacios: true,
+                soloLetras: true,
+                
             },
             "Apellido-pago": {
                 required: true,
                 minlength: 3,
                 noEspacios: true,
+                soloLetras: true,
             },
             "rut": {
                 required: true,
@@ -256,6 +262,7 @@ $(document).ready(function () {
             },
             "Nombre-titular": {
                 required: true,
+                soloLetras: true,
 
             },
             "Numero-tarjeta": {
