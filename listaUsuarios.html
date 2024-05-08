@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/listaUsuarios.css" />
+    <link rel="stylesheet" href="css/navbar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
@@ -18,6 +19,7 @@
     <!-- barra de navegación-->
     <nav class="navbar navbar-expand-sm">
         <div>
+            <!--boton perfil-->
             <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
                 <img class="img-fluid profile" src="img/perfil.png" />
             </button>
@@ -36,8 +38,8 @@
                 <a class="navbar-brand" href="index.html">DRUIDS</a>
             </div>
         </div>
-        <!-- Botones de perfil y carrito de compra -->
-        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#myModal">
+        <!-- Botones de inicio secion y carrito de compra -->
+        <button id="boton-inicio-sesion" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#myModal">
             <img class="img-fluid profile" src="img/perfil.png" />
         </button>
         <button type="button" class="btn">
@@ -59,19 +61,19 @@
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="username" class="form-label fs-4">Nombre de usuario</label>
-                            <input type="text" class="form-control fs-5" id="username"
-                                placeholder="Ingresa tu nombre de usuario">
+                    <form method="get" id="formulario-inicio-sesion" class="needs-validation" novalidate>
+                        <div class="mb-3 form-group">
+                            <label for="usuario-inicio-sesion" class="form-label fs-4">Nombre de usuario</label>
+                            <input type="text" class="form-control fs-5" id="usuario-inicio-sesion"
+                                name="usuario-inicio-sesion" placeholder="Ingresa tu nombre de usuario">
                         </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label fs-4">Contraseña</label>
-                            <input type="password" class="form-control fs-5" id="password"
-                                placeholder="Ingresa tu contraseña">
+                        <div class="mb-3 form-group">
+                            <label for="password-inicio-sesion" class="form-label fs-4">Contraseña</label>
+                            <input type="password" class="form-control fs-5" id="password-inicio-sesion"
+                                name="password-inicio-sesion" placeholder="Ingresa tu contraseña">
                         </div>
                         <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary fs-4">Iniciar sesion</button>
+                            <button type="submit" class="btn btn-primary fs-4">Iniciar sesión</button>
                             <button type="button" class="btn btn-secondary fs-4" data-bs-toggle="modal"
                                 data-bs-target="#registerModal">Registrarse</button>
                         </div>
@@ -95,24 +97,50 @@
                 </div>
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="name" class="form-label fs-4">Nombre de usuario</label>
-                            <input type="text" class="form-control fs-5" id="name"
+                    <form method="get" id="formulario-registro" class="needs-validation">
+                        <div class="mb-3 form-group">
+                            <label for="usuario-registro" class="form-label fs-4">Nombre de usuario</label>
+                            <input type="text" class="form-control fs-5" id="usuario-registro" name="usuario-registro"
                                 placeholder="Ingresa tu nombre de usuario">
                         </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label fs-4">Email</label>
-                            <input type="email" class="form-control fs-5" id="email" placeholder="Ingresa tu email">
+                        <div class="mb-3 form-group">
+                            <label for="email-registro" class="form-label fs-4">Email</label>
+                            <input type="email" class="form-control fs-5" id="email-registro" name="email-registro"
+                                placeholder="Ingresa tu email" required>
+                        </div>
+                        <div class="mb-3 form-group">
+                            <label for="password-registro" class="form-label fs-4">Contraseña</label>
+                            <div class="text-danger font-weight-bold d-flex" id="requerimiento-longitud">
+                                <p class="requerimiento">Al menos 8 caracteres</p><img class="validador"
+                                    src="img/empty-svgrepo-com.svg">
+                            </div>
+                            <div class="text-danger font-weight-bold d-flex" id="requerimiento-mayuscula">
+                                <p class="requerimiento">Al menos una letra mayúscula</p><img class="validador"
+                                    src="img/empty-svgrepo-com.svg">
+                            </div>
+                            <div class="text-danger font-weight-bold d-flex" id="requerimiento-minuscula">
+                                <p class="requerimiento">Al menos una letra minúscula</p><img class="validador"
+                                    src="img/empty-svgrepo-com.svg">
+                            </div>
+                            <div class="text-danger font-weight-bold d-flex" id="requerimiento-numero">
+                                <p class="requerimiento">Al menos un número</p><img class="validador"
+                                    src="img/empty-svgrepo-com.svg">
+                            </div>
+                            <div class="text-danger font-weight-bold d-flex" id="requerimiento-especial">
+                                <p class="requerimiento">Al menos un carácter especial</p><img class="validador"
+                                    src="img/empty-svgrepo-com.svg">
+                            </div>
+                            <input type="password" class="form-control fs-5" id="password-registro"
+                                name="password-registro" placeholder="Ingresa tu contraseña">
                         </div>
                         <div class="mb-3">
-                            <label for="password" class="form-label fs-4">Contraseña</label>
-                            <input type="password" class="form-control fs-5" id="password"
-                                placeholder="Ingresa tu contraseña">
+                            <label for="password-registro-confirmar" class="form-label fs-4">Confirmar
+                                contraseña</label>
+                            <input type="password" class="form-control fs-5" id="password-registro-confirmar"
+                                name="password-registro-confirmar" placeholder="Confirma tu contraseña" required>
                         </div>
                         <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary fs-4"
-                                data-bs-dismiss="modal">Registrarse</button>
+                            <button type="submit" class="btn btn-primary fs-4">Registrarse</button>
                         </div>
                     </form>
                 </div>
@@ -162,13 +190,17 @@
                                     </div>
                                     <div class="col-12 mt-3">
                                         <div class="row d-flex justify-content-end botones-usuarios">
-                                            <div class="col-sm-auto"> <a href="#" class="btn btn-sm btn-danger me-2" data-bs-toggle="modal" data-bs-target="#ModalEliminar">Eliminar</a>
+                                            <div class="col-sm-auto"> <a href="#" class="btn btn-sm btn-danger me-2"
+                                                    data-bs-toggle="modal" data-bs-target="#ModalEliminar">Eliminar</a>
                                             </div>
-                                            <div class="col-sm-auto">  <a href="#" class="btn btn-sm btn-warning me-2" data-bs-toggle="modal" data-bs-target="#ModalBloquear">Bloquear</a>
+                                            <div class="col-sm-auto"> <a href="#" class="btn btn-sm btn-warning me-2"
+                                                    data-bs-toggle="modal" data-bs-target="#ModalBloquear">Bloquear</a>
                                             </div>
-                                            <div class="col-sm-auto">  <a href="#" class="btn btn-sm btn-success me-2" data-bs-toggle="modal" data-bs-target="#ModalDesbloquear">Desbloquear</a>
+                                            <div class="col-sm-auto"> <a href="#" class="btn btn-sm btn-success me-2"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#ModalDesbloquear">Desbloquear</a>
                                             </div>
-                                          </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -192,13 +224,17 @@
                                     </div>
                                     <div class="col-12 mt-3">
                                         <div class="row d-flex justify-content-end botones-usuarios">
-                                            <div class="col-sm-auto"> <a href="#" class="btn btn-sm btn-danger me-2" data-bs-toggle="modal" data-bs-target="#ModalEliminar">Eliminar</a>
+                                            <div class="col-sm-auto"> <a href="#" class="btn btn-sm btn-danger me-2"
+                                                    data-bs-toggle="modal" data-bs-target="#ModalEliminar">Eliminar</a>
                                             </div>
-                                            <div class="col-sm-auto">  <a href="#" class="btn btn-sm btn-warning me-2" data-bs-toggle="modal" data-bs-target="#ModalBloquear">Bloquear</a>
+                                            <div class="col-sm-auto"> <a href="#" class="btn btn-sm btn-warning me-2"
+                                                    data-bs-toggle="modal" data-bs-target="#ModalBloquear">Bloquear</a>
                                             </div>
-                                            <div class="col-sm-auto">  <a href="#" class="btn btn-sm btn-success me-2" data-bs-toggle="modal" data-bs-target="#ModalDesbloquear">Desbloquear</a>
+                                            <div class="col-sm-auto"> <a href="#" class="btn btn-sm btn-success me-2"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#ModalDesbloquear">Desbloquear</a>
                                             </div>
-                                          </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -222,13 +258,17 @@
                                     </div>
                                     <div class="col-12 mt-3">
                                         <div class="row d-flex justify-content-end botones-usuarios">
-                                            <div class="col-sm-auto"> <a href="#" class="btn btn-sm btn-danger me-2" data-bs-toggle="modal" data-bs-target="#ModalEliminar">Eliminar</a>
+                                            <div class="col-sm-auto"> <a href="#" class="btn btn-sm btn-danger me-2"
+                                                    data-bs-toggle="modal" data-bs-target="#ModalEliminar">Eliminar</a>
                                             </div>
-                                            <div class="col-sm-auto">  <a href="#" class="btn btn-sm btn-warning me-2" data-bs-toggle="modal" data-bs-target="#ModalBloquear">Bloquear</a>
+                                            <div class="col-sm-auto"> <a href="#" class="btn btn-sm btn-warning me-2"
+                                                    data-bs-toggle="modal" data-bs-target="#ModalBloquear">Bloquear</a>
                                             </div>
-                                            <div class="col-sm-auto">  <a href="#" class="btn btn-sm btn-success me-2" data-bs-toggle="modal" data-bs-target="#ModalDesbloquear">Desbloquear</a>
+                                            <div class="col-sm-auto"> <a href="#" class="btn btn-sm btn-success me-2"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#ModalDesbloquear">Desbloquear</a>
                                             </div>
-                                          </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -252,13 +292,17 @@
                                     </div>
                                     <div class="col-12 mt-3">
                                         <div class="row d-flex justify-content-end botones-usuarios">
-                                            <div class="col-sm-auto"> <a href="#" class="btn btn-sm btn-danger me-2" data-bs-toggle="modal" data-bs-target="#ModalEliminar">Eliminar</a>
+                                            <div class="col-sm-auto"> <a href="#" class="btn btn-sm btn-danger me-2"
+                                                    data-bs-toggle="modal" data-bs-target="#ModalEliminar">Eliminar</a>
                                             </div>
-                                            <div class="col-sm-auto">  <a href="#" class="btn btn-sm btn-warning me-2" data-bs-toggle="modal" data-bs-target="#ModalBloquear">Bloquear</a>
+                                            <div class="col-sm-auto"> <a href="#" class="btn btn-sm btn-warning me-2"
+                                                    data-bs-toggle="modal" data-bs-target="#ModalBloquear">Bloquear</a>
                                             </div>
-                                            <div class="col-sm-auto">  <a href="#" class="btn btn-sm btn-success me-2" data-bs-toggle="modal" data-bs-target="#ModalDesbloquear">Desbloquear</a>
+                                            <div class="col-sm-auto"> <a href="#" class="btn btn-sm btn-success me-2"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#ModalDesbloquear">Desbloquear</a>
                                             </div>
-                                          </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -282,13 +326,17 @@
                                     </div>
                                     <div class="col-12 mt-3">
                                         <div class="row d-flex justify-content-end botones-usuarios">
-                                            <div class="col-sm-auto"> <a href="#" class="btn btn-sm btn-danger me-2" data-bs-toggle="modal" data-bs-target="#ModalEliminar">Eliminar</a>
+                                            <div class="col-sm-auto"> <a href="#" class="btn btn-sm btn-danger me-2"
+                                                    data-bs-toggle="modal" data-bs-target="#ModalEliminar">Eliminar</a>
                                             </div>
-                                            <div class="col-sm-auto">  <a href="#" class="btn btn-sm btn-warning me-2" data-bs-toggle="modal" data-bs-target="#ModalBloquear">Bloquear</a>
+                                            <div class="col-sm-auto"> <a href="#" class="btn btn-sm btn-warning me-2"
+                                                    data-bs-toggle="modal" data-bs-target="#ModalBloquear">Bloquear</a>
                                             </div>
-                                            <div class="col-sm-auto">  <a href="#" class="btn btn-sm btn-success me-2" data-bs-toggle="modal" data-bs-target="#ModalDesbloquear">Desbloquear</a>
+                                            <div class="col-sm-auto"> <a href="#" class="btn btn-sm btn-success me-2"
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#ModalDesbloquear">Desbloquear</a>
                                             </div>
-                                          </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -337,25 +385,26 @@
                 </div>
             </div>
             <!-- Modal de desbloquear usuario -->
-            <div class="modal fade" id="ModalDesbloquear" tabindex="-1" aria-labelledby="ModalDesbloquearLabel" aria-hidden="true">
+            <div class="modal fade" id="ModalDesbloquear" tabindex="-1" aria-labelledby="ModalDesbloquearLabel"
+                aria-hidden="true">
                 <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="ModalDesbloquearLabel">Desbloquear Usuario</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="ModalDesbloquearLabel">Desbloquear Usuario</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>¿Estás seguro de que quieres desbloquear a este usuario?</p>
+                            <p>El usuario podrá acceder a su cuenta nuevamente.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-success" id="btnDesbloquear">Desbloquear</button>
+                        </div>
                     </div>
-                    <div class="modal-body">
-                      <p>¿Estás seguro de que quieres desbloquear a este usuario?</p>
-                      <p>El usuario podrá acceder a su cuenta nuevamente.</p>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                      <button type="button" class="btn btn-success" id="btnDesbloquear">Desbloquear</button>
-                    </div>
-                  </div>
                 </div>
-              </div>
             </div>
+        </div>
         </div>
     </main>
 </body>
@@ -364,5 +413,12 @@
     <a class="p-5 text-white fs-4" href="sobreNosotros.html">Sobre Nosotros</a>
     <a class="p-5 text-white fs-4" href="contacto.html">Contacto</a>
 </footer>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!--jQuery validate-->
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<!-- Script -->
+<script src="js/scripts.js"></script>
+<script src="js/validaciones.js"></script>
 
 </html>

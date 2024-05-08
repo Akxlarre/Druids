@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/perfil.css" />
+    <link rel="stylesheet" href="css/navbar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
@@ -18,6 +19,7 @@
     <!-- barra de navegación-->
     <nav class="navbar navbar-expand-sm">
         <div>
+            <!--boton perfil-->
             <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
                 <img class="img-fluid profile" src="img/perfil.png" />
             </button>
@@ -36,9 +38,9 @@
                 <a class="navbar-brand" href="index.html">DRUIDS</a>
             </div>
         </div>
-        <!-- Botones de perfil y carrito de compra -->
-        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#myModal">
-            <img class="img-fluid profile" src="img/perfil.png"/>
+        <!-- Botones de inicio secion y carrito de compra -->
+        <button id="boton-inicio-sesion" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#myModal">
+            <img class="img-fluid profile" src="img/perfil.png" />
         </button>
         <button type="button" class="btn">
             <a href="carrito.html">
@@ -59,19 +61,17 @@
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="username" class="form-label fs-4">Nombre de usuario</label>
-                            <input type="text" class="form-control fs-5" id="username"
-                                placeholder="Ingresa tu nombre de usuario">
+                    <form method="get" id="formulario-inicio-sesion" class="needs-validation" novalidate>
+                        <div class="mb-3 form-group">
+                            <label for="usuario-inicio-sesion" class="form-label fs-4">Nombre de usuario</label>
+                            <input type="text" class="form-control fs-5" id="usuario-inicio-sesion" name="usuario-inicio-sesion" placeholder="Ingresa tu nombre de usuario" >
                         </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label fs-4">Contraseña</label>
-                            <input type="password" class="form-control fs-5" id="password"
-                                placeholder="Ingresa tu contraseña">
+                        <div class="mb-3 form-group">
+                            <label for="password-inicio-sesion" class="form-label fs-4">Contraseña</label>
+                            <input type="password" class="form-control fs-5" id="password-inicio-sesion" name="password-inicio-sesion" placeholder="Ingresa tu contraseña" >
                         </div>
                         <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary fs-4">Iniciar sesion</button>
+                            <button type="submit" class="btn btn-primary fs-4">Iniciar sesión</button>
                             <button type="button" class="btn btn-secondary fs-4" data-bs-toggle="modal"
                                 data-bs-target="#registerModal">Registrarse</button>
                         </div>
@@ -95,24 +95,29 @@
                 </div>
                 <!-- Modal body -->
                 <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="name" class="form-label fs-4">Nombre de usuario</label>
-                            <input type="text" class="form-control fs-5" id="name"
-                                placeholder="Ingresa tu nombre de usuario">
+                    <form method="get" id="formulario-registro" class="needs-validation">
+                        <div class="mb-3 form-group">
+                            <label for="usuario-registro" class="form-label fs-4">Nombre de usuario</label>
+                            <input type="text" class="form-control fs-5" id="usuario-registro" name="usuario-registro" placeholder="Ingresa tu nombre de usuario">
+                        </div>
+                        <div class="mb-3 form-group">
+                            <label for="email-registro" class="form-label fs-4">Email</label>
+                            <input type="email"  class="form-control fs-5" id="email-registro" name="email-registro" placeholder="Ingresa tu email" required>                            </div>
+                        <div class="mb-3 form-group">
+                            <label for="password-registro" class="form-label fs-4">Contraseña</label>
+                            <div class="text-danger font-weight-bold d-flex" id="requerimiento-longitud"><p class="requerimiento">Al menos 8 caracteres</p><img class="validador" src="img/empty-svgrepo-com.svg"></div>
+                            <div class="text-danger font-weight-bold d-flex" id="requerimiento-mayuscula"><p class="requerimiento">Al menos una letra mayúscula</p><img class="validador" src="img/empty-svgrepo-com.svg"></div>
+                            <div class="text-danger font-weight-bold d-flex" id="requerimiento-minuscula"><p class="requerimiento">Al menos una letra minúscula</p><img class="validador" src="img/empty-svgrepo-com.svg"></div>
+                            <div class="text-danger font-weight-bold d-flex" id="requerimiento-numero"><p class="requerimiento">Al menos un número</p><img class="validador" src="img/empty-svgrepo-com.svg"></div>
+                            <div class="text-danger font-weight-bold d-flex" id="requerimiento-especial"><p class="requerimiento">Al menos un carácter especial</p><img class="validador" src="img/empty-svgrepo-com.svg"></div>                                
+                            <input type="password" class="form-control fs-5" id="password-registro" name="password-registro" placeholder="Ingresa tu contraseña">
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label fs-4">Email</label>
-                            <input type="email" class="form-control fs-5" id="email" placeholder="Ingresa tu email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label fs-4">Contraseña</label>
-                            <input type="password" class="form-control fs-5" id="password"
-                                placeholder="Ingresa tu contraseña">
+                            <label for="password-registro-confirmar" class="form-label fs-4">Confirmar contraseña</label>
+                            <input type="password" class="form-control fs-5" id="password-registro-confirmar" name="password-registro-confirmar" placeholder="Confirma tu contraseña" required>
                         </div>
                         <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary fs-4"
-                                data-bs-dismiss="modal">Registrarse</button>
+                            <button type="submit" class="btn btn-primary fs-4">Registrarse</button>
                         </div>
                     </form>
                 </div>
@@ -194,41 +199,43 @@
                     </div>
                     <!-- Modal body -->
                     <div class="modal-body">
-                        <div class="row mb-3">
-                            <div class="col-sm-3">
-                                <h6 class="mb-0">Nombre</h6>
+                        <form id="formulario-editar-perfil" class="needs-validation">
+                            <div class="row mb-3">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Nombre</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary form-group">
+                                    <input type="text" class="form-control" id="nombre-perfil" name="nombre-perfil" placeholder="Pepito">
+                                </div>
                             </div>
-                            <div class="col-sm-9 text-secondary">
-                                <input type="text" class="form-control" value="Pepito">
+                            <div class="row mb-3">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Email</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary form-group">
+                                    <input type="text" class="form-control" id="email-perfil" name="email-perfil" placeholder="fip@jukmuh.al" >
+                                </div>
                             </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-3">
-                                <h6 class="mb-0">Email</h6>
+                            <div class="row mb-3">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Direccion</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary form-group">
+                                    <input type="text" class="form-control" id="direccion-perfil" name="direccion-perfil"  placeholder="Concepcion, San andres 123">
+                                </div>
                             </div>
-                            <div class="col-sm-9 text-secondary">
-                                <input type="text" class="form-control" value="fip@jukmuh.al">
+                            <div class="col-md-12 mb-2">
+                                <div class="form-group">
+                                    <label for="imagen-perfil">Imágen de perfil (opcional)</label>
+                                    <input type="file" class="form-control" id="imagen-perfil" name="imagen-perfil"  multiple>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-sm-3">
-                                <h6 class="mb-0">Direccion</h6>
+                            <div class="row">
+                                <div class="col-sm-12 d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                                </div>
                             </div>
-                            <div class="col-sm-9 text-secondary">
-                                <input type="text" class="form-control" value="Concepcion, San andres 123">
-                            </div>
-                        </div>
-                        <div class="col-md-12 mb-2">
-                            <div class="form-group">
-                                <label for="imagenesProducto">Imágen de perfil</label>
-                                <input type="file" class="form-control"  multiple>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-12 d-flex justify-content-end">
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Guardar cambios</button>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                     <!-- Modal footer -->
                     <div class="modal-footer">
@@ -323,5 +330,9 @@
     <a class="p-5 text-white fs-4" href="sobreNosotros.html">Sobre Nosotros</a>
     <a class="p-5 text-white fs-4" href="contacto.html">Contacto</a>
 </footer>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!--jQuery validate-->
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="js/validaciones.js"></script>
+<script src="js/scripts.js"></script>
 </html>

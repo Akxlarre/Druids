@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <link rel="stylesheet" href="css/pago.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
 
-        <title>Pago</title>
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/pago.css" />
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Pago</title>
+</head>
+
+<body>
     <header>
         <!-- barra de navegación-->
         <nav class="navbar navbar-expand-sm">
             <div>
+                <!--boton perfil-->
                 <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown">
                     <img class="img-fluid profile" src="img/perfil.png" />
                 </button>
@@ -35,8 +39,8 @@
                     <a class="navbar-brand" href="index.html">DRUIDS</a>
                 </div>
             </div>
-            <!-- Botones de perfil y carrito de compra -->
-            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#myModal">
+            <!-- Botones de inicio secion y carrito de compra -->
+            <button id="boton-inicio-sesion" type="button" class="btn" data-bs-toggle="modal" data-bs-target="#myModal">
                 <img class="img-fluid profile" src="img/perfil.png" />
             </button>
             <button type="button" class="btn">
@@ -58,17 +62,17 @@
 
                     <!-- Modal body -->
                     <div class="modal-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="username" class="form-label fs-4">Nombre de usuario</label>
-                                <input type="text" class="form-control fs-5" id="username" placeholder="Ingresa tu nombre de usuario">
+                        <form method="get" id="formulario-inicio-sesion" class="needs-validation" novalidate>
+                            <div class="mb-3 form-group">
+                                <label for="usuario-inicio-sesion" class="form-label fs-4">Nombre de usuario</label>
+                                <input type="text" class="form-control fs-5" id="usuario-inicio-sesion" name="usuario-inicio-sesion" placeholder="Ingresa tu nombre de usuario" >
                             </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label fs-4">Contraseña</label>
-                                <input type="password" class="form-control fs-5" id="password" placeholder="Ingresa tu contraseña">
+                            <div class="mb-3 form-group">
+                                <label for="password-inicio-sesion" class="form-label fs-4">Contraseña</label>
+                                <input type="password" class="form-control fs-5" id="password-inicio-sesion" name="password-inicio-sesion" placeholder="Ingresa tu contraseña" >
                             </div>
                             <div class="d-grid gap-2">
-                                <button type="submit" class="btn btn-primary fs-4">Iniciar sesion</button>
+                                <button type="submit" class="btn btn-primary fs-4">Iniciar sesión</button>
                                 <button type="button" class="btn btn-secondary fs-4" data-bs-toggle="modal"
                                     data-bs-target="#registerModal">Registrarse</button>
                             </div>
@@ -92,21 +96,29 @@
                     </div>
                     <!-- Modal body -->
                     <div class="modal-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="name" class="form-label fs-4">Nombre de usuario</label>
-                                <input type="text" class="form-control fs-5" id="name" placeholder="Ingresa tu nombre de usuario">
+                        <form method="get" id="formulario-registro" class="needs-validation">
+                            <div class="mb-3 form-group">
+                                <label for="usuario-registro" class="form-label fs-4">Nombre de usuario</label>
+                                <input type="text" class="form-control fs-5" id="usuario-registro" name="usuario-registro" placeholder="Ingresa tu nombre de usuario">
+                            </div>
+                            <div class="mb-3 form-group">
+                                <label for="email-registro" class="form-label fs-4">Email</label>
+                                <input type="email"  class="form-control fs-5" id="email-registro" name="email-registro" placeholder="Ingresa tu email" required>                            </div>
+                            <div class="mb-3 form-group">
+                                <label for="password-registro" class="form-label fs-4">Contraseña</label>
+                                <div class="text-danger font-weight-bold d-flex" id="requerimiento-longitud"><p class="requerimiento">Al menos 8 caracteres</p><img class="validador" src="img/empty-svgrepo-com.svg"></div>
+                                <div class="text-danger font-weight-bold d-flex" id="requerimiento-mayuscula"><p class="requerimiento">Al menos una letra mayúscula</p><img class="validador" src="img/empty-svgrepo-com.svg"></div>
+                                <div class="text-danger font-weight-bold d-flex" id="requerimiento-minuscula"><p class="requerimiento">Al menos una letra minúscula</p><img class="validador" src="img/empty-svgrepo-com.svg"></div>
+                                <div class="text-danger font-weight-bold d-flex" id="requerimiento-numero"><p class="requerimiento">Al menos un número</p><img class="validador" src="img/empty-svgrepo-com.svg"></div>
+                                <div class="text-danger font-weight-bold d-flex" id="requerimiento-especial"><p class="requerimiento">Al menos un carácter especial</p><img class="validador" src="img/empty-svgrepo-com.svg"></div>                                
+                                <input type="password" class="form-control fs-5" id="password-registro" name="password-registro" placeholder="Ingresa tu contraseña">
                             </div>
                             <div class="mb-3">
-                                <label for="email" class="form-label fs-4">Email</label>
-                                <input type="email" class="form-control fs-5" id="email" placeholder="Ingresa tu email">
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label fs-4">Contraseña</label>
-                                <input type="password" class="form-control fs-5" id="password" placeholder="Ingresa tu contraseña">
+                                <label for="password-registro-confirmar" class="form-label fs-4">Confirmar contraseña</label>
+                                <input type="password" class="form-control fs-5" id="password-registro-confirmar" name="password-registro-confirmar" placeholder="Confirma tu contraseña" required>
                             </div>
                             <div class="d-grid gap-2">
-                                <button type="submit" class="btn btn-primary fs-4" data-bs-dismiss="modal">Registrarse</button>
+                                <button type="submit" class="btn btn-primary fs-4">Registrarse</button>
                             </div>
                         </form>
                     </div>
@@ -118,122 +130,173 @@
             </div>
         </div>
     </header>
-    <body>
-        <main>
-            <!--boton de volver atras-->
-            <section class="d-flex justify-content-start">
-                <div class="container m-2">
-                    <a href="carrito.html" class="btn boton-volver"><img src="img/back-svgrepo-com.svg" alt=""></a>
+    <main>
+        <!--boton de volver atras-->
+        <section class="d-flex justify-content-start">
+            <div class="container m-2">
+                <a href="carrito.html" class="btn boton-volver"><img src="img/back-svgrepo-com.svg" alt=""></a>
+            </div>
+        </section>
+        <section>
+            <div class="row">
+                <div class="col-12 mt-1">
+                    <h1 class="text-center">Pago</h1>
                 </div>
-            </section>
-            <section>
-                <div class="row">
-                    <div class="col-12 mt-1">
-                        <h1 class="text-center">Pago</h1>
-                    </div>
-                </div>
-            </section>
-            <section class="h-100">
-                <div class="container py-5">
-                    <div class="row d-flex justify-content-center my-4">
-                        <div class="col-md-8">
-                            <form>
-                                <div class="mb-3">
-                                    <label for="name" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="name" placeholder="Nombre">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Correo</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Correo">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="address" class="form-label">Dirección</label>
-                                    <input type="text" class="form-control" id="address" placeholder="Dirección">
-                                </div>
-                                <div class="container mt-3">
-                                    <div class="card mb-3 contenedor-tarjeta">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Tarjeta de Crédito/Débito</h5>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <label for="numeroTarjeta">Número de Tarjeta</label>
-                                                    <input type="text" class="form-control" id="numeroTarjeta"
-                                                        placeholder="1234-5678-9012-3456">
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label for="fechaVencimiento">Fecha de Vencimiento</label>
-                                                    <input type="text" class="form-control" id="fechaVencimiento"
-                                                        placeholder="MM/YY">
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <label for="cvv">CVV</label>
-                                                    <input type="text" class="form-control" id="cvv" placeholder="123">
-                                                </div>
-                                            </div>
-                                            <div class="row mt-3">
-                                                <div class="col-md-6">
-                                                    <label for="nombreTitular">Nombre del Titular</label>
-                                                    <input type="text" class="form-control" id="nombreTitular"
-                                                        placeholder="Nombre completo">
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <label for="dniTitular">Rut del Titular</label>
-                                                    <input type="text" class="form-control" id="dniTitular"
-                                                        placeholder="12345678">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
+            </div>
+        </section>
+        <div class="row g-5 mx-5">
+            <div class="col-md-5 col-lg-4 order-md-last">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-primary">Tu carro</span>
+                    <span class="badge bg-primary rounded-pill">3</span>
+                </h4>
+                <ul class="list-group mb-3">
+                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                        <div>
+                            <h6 class="my-0">Nombre del producto</h6>
+                            <small class="text-muted">Breve descripción</small>
                         </div>
-                        <div class="col-md-4">
-                            <div class="card mb-4">
-                                <div class="card-header py-3">
-                                    <h5 class="mb-0">Resumen</h5>
-                                </div>
-                                <div class="card-body">
-                                    <ul class="list-group list-group-flush">
-                                        <li
-                                            class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                                            Producto 1
-                                            <span>$00000</span>
-                                        </li>
-                                        <li
-                                            class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                                            Producto 2
-                                            <span>$0000</span>
-                                        </li>
-                                        <li
-                                            class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                                            Envio
-                                            <span>$0000</span>
-                                        </li>
-                                        <li
-                                            class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
-                                            <div>
-                                                <strong>Total</strong>
-                                            </div>
-                                            <span><strong>$0000</strong></span>
-                                        </li>
-                                    </ul>
-                                    <button type="button" data-mdb-button-init data-mdb-ripple-init
-                                        class="btn btn-primary btn-lg btn-block"><a class="text-white"
-                                            href="pagoexitoso.html">
-                                            pagar
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
+                        <span class="text-muted">$1200</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                        <div>
+                            <h6 class="my-0">Segundo producto</h6>
+                            <small class="text-muted">Breve descripción</small>
+                        </div>
+                        <span class="text-muted">$800</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                        <div>
+                            <h6 class="my-0">Tercer elemento</h6>
+                            <small class="text-muted">Breve descripción</small>
+                        </div>
+                        <span class="text-muted">$500</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between bg-light">
+                        <div class="text-success">
+                            <h6 class="my-0">Código promocional</h6>
+                            <small>Ejemplo codigo</small>
+                        </div>
+                        <span class="text-success">−$500</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Total (clp)</span>
+                        <strong>$2000</strong>
+                    </li>
+                </ul>
+                <form class="card p-2">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="codigo-promo" name="codigo-promo" placeholder="Código Promo">
+                        <button type="submit" class="btn btn-secondary">Aplicar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-7 col-lg-8">
+                <form class="needs-validation" id="form-pago">
+                    <div class="row g-3">
+                        <div class="col-sm-6 form-group">
+                            <label for="Primer-nombre-pago" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="Primer-nombre-pago" name="Primer-nombre-pago" placeholder="">
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label for="Apellido-pago" class="form-label">Apellido</label>
+                            <input type="text" class="form-control" id="Apellido-pago" name="Apellido-pago" placeholder="">
+                        </div>
+                        <div class="col-12 form-group">
+                            <label for="rut" class="form-label">Rut</label>
+                            <input type="text" class="form-control" id="rut" name="rut" placeholder="xxxxxxxx-x">
+                        </div>
+                        <div class="col-12 form-group">
+                            <label for="Email-pago" class="form-label">Email <span
+                                    class="text-muted">(Opcional)</span></label>
+                            <input type="email" class="form-control" id="Email-pago" name="Email-pago" placeholder="tu@example.com">
+                        </div>
+                        <div class="col-12 form-group">
+                            <label for="Direccion-pago" class="form-label">Dirección</label>
+                            <input type="text" class="form-control" id="Direccion-pago" name="Direccion-pago" placeholder="Paicavi 123">
+                        </div>
+                        <div class="col-md-5 form-group">
+                            <label for="Region" class="form-label">Region</label>
+                            <select class="form-select" id="Region" name="Region">
+                                <option value="0">Seleccione...</option>
+                                <option value="Región de Arica y Parinacota">Región de Arica y Parinacota</option>
+                                <option value="Región de Tarapacá">Región de Tarapacá</option>
+                                <option value="Región de Antofagasta">Región de Antofagasta</option>
+                                <option value="Región de Atacama">Región de Atacama</option>
+                                <option value="Región de Coquimbo">Región de Coquimbo</option>
+                                <option value="Región de Valparaíso">Región de Valparaíso</option>
+                                <option value="Región Metropolitana">Región Metropolitana</option>
+                                <option value="Región de O’Higgins">Región de O’Higgins</option>
+                                <option value="Región del Maule">Región del Maule</option>
+                                <option value="Región del Ñuble">Región del Ñuble</option>
+                                <option value="Región del Biobío">Región del Biobío</option>
+                                <option value="Región de La Araucanía">Región de La Araucanía</option>
+                                <option value="Región de Los Ríos">Región de Los Ríos</option>
+                                <option value="Región de Los Lagos">Región de Los Lagos</option>
+                                <option value="Región de Aysén">Región de Aysén</option>
+                                <option value="Región de Magallanes">Región de Magallanes</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <label for="comuna" class="form-label">Comuna</label>
+                            <select class="form-select" id="comuna" name="comuna">
+                            </select>
+                        </div>
+                        <div class="col-md-3 form-group">
+                            <label for="zip" class="form-label">Código postal</label>
+                            <input type="text" class="form-control" id="zip" name="zip" placeholder="">
                         </div>
                     </div>
-                </div>
-            </section>
-        </main>
-    </body>
+                    <hr class="my-4">
+                    <h4 class="mb-3">Metodo de pago</h4>
+                    <div class="my-3 form-group">
+                        <div class="form-check">
+                            <input id="credito" name="metodo-pago" type="radio" class="form-check-input">
+                            <label class="form-check-label" for="metodo-pago">Tarjeta de crédito</label>
+                        </div>
+                        <div class="form-check">
+                            <input id="debito" name="metodo-pago" type="radio" class="form-check-input">
+                            <label class="form-check-label" for="metodo-pago">Tarjeta de débito</label>
+                        </div>
+                        <div>
+                            <label for="metodo-pago" class="error"></label>
+                        </div>
+                    </div>
+                    <div class="row gy-3">
+                        <div class="col-md-6 form-group">
+                            <label for="Nombre-titular" class="form-label">Nombre del Titular</label>
+                            <input type="text" class="form-control" id="Nombre-titular" name="Nombre-titular" placeholder="">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label for="Numero-tarjeta" class="form-label">Número de tarjeta</label>
+                            <input type="text" class="form-control" id="Numero-tarjeta" name="Numero-tarjeta" placeholder="">
+                        </div>
+                        <div class="col-md-3 form-group">
+                            <label for="Fecha-expiracion" class="form-label">Vencimiento</label>
+                            <input type="text" class="form-control" id="Fecha-expiracion" name="Fecha-expiracion" placeholder="MM/YY">
+                        </div>
+                        <div class="col-md-3 form-group">
+                            <label for="cvv" class="form-label">CVV</label>
+                            <input type="text" class="form-control" id="cvv" name="cvv" >
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <button type="submit" class="w-100 btn btn-primary btn-lg" id="boton-pago">Continuar con el pago</button>
+                </form>
+            </div>
+        </div>
+    </main>
     <footer class="mt-3 p-5 justify-content-right">
         <!-- Contenido del pie de página -->
         <a class="p-5 text-white fs-4" href="sobreNosotros.html">Sobre Nosotros</a>
         <a class="p-5 text-white fs-4" href="contacto.html">Contacto</a>
     </footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!--jQuery validate-->
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="js/validaciones.js"></script>
+<script src="js/pago.js"></script>
+<script src="js/scripts.js"></script>
+
 </html>
