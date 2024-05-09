@@ -80,3 +80,12 @@
 label{
     color: black;
 }
+
+#text-boton-inicio-sesion{
+    color: white;
+    font-size: 0.8rem;
+
+}
+#img-iniciar-sesion{
+    width: 2rem;
+}

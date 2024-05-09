@@ -161,12 +161,7 @@ $(document).ready(function () {
             "password-inicio-sesion": {
                 required: "Por favor ingresa una contraseña"
             }
-        }
-    });
-    $("#formulario-inicio-sesion").submit(function () {
-        if ($("#formulario-inicio-sesion").valid()) {
-            $("#boton-inicio-sesion").hide();
-        }
+        },
     });
 });
 
