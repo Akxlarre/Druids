@@ -45,8 +45,28 @@ $(document).ready(function() {
 
         autocomplete.addListener('place_changed', function() {
             var place = autocomplete.getPlace();
-            console.log(place); // Aquí puedes manejar la respuesta del lugar seleccionado
         });
     });
 });
 
+$(document).ready(function() {
+    // valor por defecto
+    $('.cantidad').val(1);
+
+    $('.cantidad').on('input', function() {
+        var value = $(this).val();
+        // Permitir solo números
+        value = value.replace(/[^0-9]/g, '');
+        // Limitar la cantidad a 99
+        if (value.length > 2) {
+            value = value.substr(0, 2);
+        }
+        // evitar que esté vacío
+        if (value == '') {
+            value = 1;
+        }
+        $(this).val(value);
+    
+    }
+    );
+} );
