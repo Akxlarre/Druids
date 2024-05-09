@@ -13,8 +13,6 @@ $(document).ready(function() {
     }
 
     $('#formulario-inicio-sesion').submit(function(event) {
-        $('#boton-inicio-sesion').hide();
-        $('#boton-perfil').show();
         localStorage.setItem('sesion', 'true');
     });
 

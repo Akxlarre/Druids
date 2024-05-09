@@ -60,12 +60,12 @@ $(document).ready(function() {
         if (value.length > 2) {
             value = value.substr(0, 2);
         }
-        // evitar que esté vacío
-        if (value == '') {
-            value = 1;
-        }
         $(this).val(value);
-    
-    }
-    );
+    });
+    //si deja el campo vacio se pone 1
+    $('.cantidad').on('blur', function() {
+        if ($(this).val() == '') {
+            $(this).val(1);
+        }
+    });
 } );
