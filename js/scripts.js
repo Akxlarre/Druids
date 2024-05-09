@@ -34,4 +34,19 @@ $(document).ready(function() {
     });
 });
 
+$(document).ready(function() {
+    var searchInput = $('#Direccion-pago');
+
+    searchInput.on('focus', function() {
+        var autocomplete = new google.maps.places.Autocomplete(searchInput[0], {
+            types: ['geocode'], // Limita los resultados a lugares geográficos
+            componentRestrictions: { country: 'cl' } // Limita los resultados a Chile
+        });
+
+        autocomplete.addListener('place_changed', function() {
+            var place = autocomplete.getPlace();
+            console.log(place); // Aquí puedes manejar la respuesta del lugar seleccionado
+        });
+    });
+});
 

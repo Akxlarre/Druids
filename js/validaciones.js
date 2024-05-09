@@ -1,29 +1,3 @@
-// validar formulario inicio de sesion
-$(document).ready(function () {
-    $("#formulario-inicio-sesion").validate({
-        rules: {
-            "usuario-inicio-sesion": {
-                required: true,
-            },
-            "password-inicio-sesion": {
-                required: true,
-            }
-        },
-        messages: {
-            "usuario-inicio-sesion": {
-                required: "Por favor ingresa un nombre de usuario"
-            },
-            "password-inicio-sesion": {
-                required: "Por favor ingresa una contraseña"
-            }
-        }
-    });
-    $("#formulario-inicio-sesion").submit(function () {
-        if ($("#formulario-inicio-sesion").valid()) {
-            $("#boton-inicio-sesion").hide();
-        }
-    });
-});
 
 // requerimientos de la contraseña
 $(document).ready(function() {
@@ -56,6 +30,7 @@ $(document).ready(function() {
 });
 
 //nuevos metodos de validacion
+
 $.validator.addMethod("noEspacios", function(value, element) {
     return this.optional(element) || !/\s/.test(value);
 }, "Este campo no puede contener espacios");
@@ -167,6 +142,33 @@ $.validator.addMethod("validarRut", function(value, element) {
     // Comparar el dígito verificador esperado con el dígito verificador ingresado
     return digitoVerificadorEsperado.toString().toLowerCase() === rutSplit[1].toLowerCase();
 }, "Por favor, ingresa un RUT válido.");
+
+// validar formulario inicio de sesion
+$(document).ready(function () {
+    $("#formulario-inicio-sesion").validate({
+        rules: {
+            "usuario-inicio-sesion": {
+                required: true,
+            },
+            "password-inicio-sesion": {
+                required: true,
+            },
+        },
+        messages: {
+            "usuario-inicio-sesion": {
+                required: "Por favor ingresa un nombre de usuario"
+            },
+            "password-inicio-sesion": {
+                required: "Por favor ingresa una contraseña"
+            }
+        }
+    });
+    $("#formulario-inicio-sesion").submit(function () {
+        if ($("#formulario-inicio-sesion").valid()) {
+            $("#boton-inicio-sesion").hide();
+        }
+    });
+});
 
 // validar formulario registro
 $(document).ready(function () {
