@@ -49,6 +49,21 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
+    var searchInput = $('#direccion-perfil');
+
+    searchInput.on('focus', function() {
+        var autocomplete = new google.maps.places.Autocomplete(searchInput[0], {
+            types: ['geocode'], // Limita los resultados a lugares geográficos
+            componentRestrictions: { country: 'cl' } // Limita los resultados a Chile
+        });
+
+        autocomplete.addListener('place_changed', function() {
+            var place = autocomplete.getPlace();
+        });
+    });
+});
+
+$(document).ready(function() {
     // valor por defecto
     $('.cantidad').val(1);
 
@@ -60,6 +75,10 @@ $(document).ready(function() {
         if (value.length > 2) {
             value = value.substr(0, 2);
         }
+        //manejar los ceros a la izquierda que se junto con un numero a la derecha
+        if (value[0] === '0' && value.length > 1) {
+            value = value.substring(1);
+        }
         $(this).val(value);
     });
     //si deja el campo vacio se pone 1
@@ -69,3 +88,10 @@ $(document).ready(function() {
         }
     });
 } );
+
+$(document).ready(function() {
+    $('#formulario-carrito').submit(function(event) {
+        window.location.href = 'pago.html';
+        event.preventDefault();
+    });
+});

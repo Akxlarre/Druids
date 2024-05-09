@@ -559,6 +559,7 @@ $(document).ready(function () {
                 sinEspacioInicioFin: true,
                 minlength: 3,
                 maxlength: 20,
+                soloLetras: true,
             },
             "email-perfil": {
                 required: true,
