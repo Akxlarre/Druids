@@ -1,29 +1,3 @@
-// validar formulario inicio de sesion
-$(document).ready(function () {
-    $("#formulario-inicio-sesion").validate({
-        rules: {
-            "usuario-inicio-sesion": {
-                required: true,
-            },
-            "password-inicio-sesion": {
-                required: true,
-            }
-        },
-        messages: {
-            "usuario-inicio-sesion": {
-                required: "Por favor ingresa un nombre de usuario"
-            },
-            "password-inicio-sesion": {
-                required: "Por favor ingresa una contraseña"
-            }
-        }
-    });
-    $("#formulario-inicio-sesion").submit(function () {
-        if ($("#formulario-inicio-sesion").valid()) {
-            $("#boton-inicio-sesion").hide();
-        }
-    });
-});
 
 // requerimientos de la contraseña
 $(document).ready(function() {
@@ -56,6 +30,7 @@ $(document).ready(function() {
 });
 
 //nuevos metodos de validacion
+
 $.validator.addMethod("noEspacios", function(value, element) {
     return this.optional(element) || !/\s/.test(value);
 }, "Este campo no puede contener espacios");
@@ -105,6 +80,9 @@ $.validator.addMethod("añoValido", function (value, element) {
     var añoIngresado = value.substring(3, 5);
     return añoIngresado >= añoActual;
 }, "Por favor ingresa un año válido");
+$.validator.addMethod('soloLetras', function(value, element) {
+    return this.optional(element) || /^[a-z áãâäàéêëèíîïìóõôöòúûüùçñ]+$/i.test(value);
+}, "Por favor ingresa solo caracteres alfabéticos");
 
 // Función para validar el número de tarjeta  utilizando el algoritmo de Luhn
 function luhnCheck(value) {
@@ -165,6 +143,28 @@ $.validator.addMethod("validarRut", function(value, element) {
     return digitoVerificadorEsperado.toString().toLowerCase() === rutSplit[1].toLowerCase();
 }, "Por favor, ingresa un RUT válido.");
 
+// validar formulario inicio de sesion
+$(document).ready(function () {
+    $("#formulario-inicio-sesion").validate({
+        rules: {
+            "usuario-inicio-sesion": {
+                required: true,
+            },
+            "password-inicio-sesion": {
+                required: true,
+            },
+        },
+        messages: {
+            "usuario-inicio-sesion": {
+                required: "Por favor ingresa un nombre de usuario"
+            },
+            "password-inicio-sesion": {
+                required: "Por favor ingresa una contraseña"
+            }
+        },
+    });
+});
+
 // validar formulario registro
 $(document).ready(function () {
 
@@ -219,11 +219,14 @@ $(document).ready(function () {
                 required: true,
                 minlength: 3,
                 noEspacios: true,
+                soloLetras: true,
+                
             },
             "Apellido-pago": {
                 required: true,
                 minlength: 3,
                 noEspacios: true,
+                soloLetras: true,
             },
             "rut": {
                 required: true,
@@ -256,6 +259,7 @@ $(document).ready(function () {
             },
             "Nombre-titular": {
                 required: true,
+                soloLetras: true,
 
             },
             "Numero-tarjeta": {
@@ -555,6 +559,7 @@ $(document).ready(function () {
                 sinEspacioInicioFin: true,
                 minlength: 3,
                 maxlength: 20,
+                soloLetras: true,
             },
             "email-perfil": {
                 required: true,
